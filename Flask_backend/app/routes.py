@@ -18,9 +18,21 @@ def get_login():
     # pairing_key = str(uuid.uuid4())  # Generate a unique pairing key
     temp_codes[temp_code] = pairing_key  # Save pairing key linked to temp_code
 
-    # Return the login URL with the temp_code and the pairing key
+    # # Return the login URL with the temp_code and the pairing key
     login_url = f"{app.config["URL"]}/login/{temp_code}"
     return jsonify({"login_url": login_url, "pairing_key": pairing_key})
+    
+    
+    # button_html = f'''
+    #         <button onclick="window.open('{login_url}', '_blank')">
+    #             Login
+    #         </button>
+    #         '''
+    
+    # return jsonify({
+    #     "html": button_html,
+    #     "pairing_key": pairing_key
+    # })
 
 
 

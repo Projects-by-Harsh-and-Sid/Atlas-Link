@@ -1,87 +1,61 @@
 # Test 1
 
-```json
-{
-  "openapi": "3.1.0",
-  "info": {
-    "title": "Authentication and User Info API",
-    "description": "API to authenticate users and fetch their information using a pairing key.",
-    "version": "v1.0.0"
-  },
-  "servers": [
-    {
-      "url": "https://3205-122-160-19-185.ngrok-free.app"
-    }
-  ],
-  "paths": {
-    "/getlogin": {
-      "get": {
-        "description": "Initiates user authentication by providing a login URL and a pairing key.",
-        "operationId": "GetLogin",
-        "responses": {
-          "200": {
-            "description": "Login URL and pairing key returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "login_url": {
-                      "type": "string",
-                      "description": "The URL to log in"
-                    },
-                    "pairing_key": {
-                      "type": "string",
-                      "description": "A unique pairing key for the user"
-                    }
-                  },
-                  "required": ["login_url", "pairing_key"]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/get_user_info": {
-      "get": {
-        "description": "Fetches user-specific information using the pairing key.",
-        "operationId": "GetUserInfo",
-        "responses": {
-          "200": {
-            "description": "User information returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "user_id": {
-                      "type": "string",
-                      "description": "The ID of the user"
-                    },
-                    "account_info": {
-                      "type": "string",
-                      "description": "The user's account-related information"
-                    }
-                  },
-                  "required": ["user_id", "account_info"]
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized if pairing key is missing or invalid"
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "schemas": {}
-  }
-}
+```yaml
 
-
+openapi: 3.1.0
+info:
+  title: Authentication and User Info API
+  description: API to authenticate users and fetch their information using a pairing key.
+  version: v1.0.0
+servers:
+  - url: https://composed-early-tadpole.ngrok-free.app/
+paths:
+  /getlogin:
+    get:
+      description: Initiates user authentication by providing a login URL and a pairing key.
+      operationId: GetLogin
+      responses:
+        '200':
+          description: Login URL and pairing key returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  login_url:
+                    type: string
+                    description: The URL to log in
+                  pairing_key:
+                    type: string
+                    description: A unique pairing key for the user
+                required:
+                  - login_url
+                  - pairing_key
+  /get_user_info:
+    get:
+      description: Fetches user-specific information using the pairing key.
+      operationId: GetUserInfo
+      responses:
+        '200':
+          description: User information returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                    description: The ID of the user
+                  account_info:
+                    type: string
+                    description: The user's account-related information
+                required:
+                  - user_id
+                  - account_info
+        '401':
+          description: Unauthorized if pairing key is missing or invalid
+components:
+  schemas: {}
 ```
 
 
