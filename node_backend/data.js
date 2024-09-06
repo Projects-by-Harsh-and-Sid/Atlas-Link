@@ -1,5 +1,5 @@
 const { Connection, PublicKey } = require('@solana/web3.js');
-const { GmClientService, Factory  } = require('@staratlas/factory');
+const { GmClientService, getAccountInfo } = require('@staratlas/factory');
 const express = require('express');
 const fs = require('fs');
 
@@ -7,7 +7,7 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
-const factory = Factory;
+// const factory = Factory;
 
 // Replace with your actual Solana RPC endpoint and program ID
 const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=5f413c9c-5af3-4a7e-bfc3-e0bc546b9a3e');
@@ -86,7 +86,7 @@ app.post('/api/get_account_details', async (req, res) => {
         const publicKey = new PublicKey(account);
 
         // Fetch account details using the publicKey
-        const accountDetails = await factory.getAccountInfo(connection, publicKey);
+        const accountDetails = await getAccountInfo(connection, publicKey);
         // Send the orders as the API response
         res.json({
             message: 'Account retrieved successfully',
