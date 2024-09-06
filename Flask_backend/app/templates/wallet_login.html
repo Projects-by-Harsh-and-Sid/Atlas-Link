@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/wallet_login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button id="connectWallet">Connect to Wallet</button>
+    </div>
+    <script type="module" src="{{url_for('static', filename='js/login.js')}}"></script>
+</body>
+</html>
