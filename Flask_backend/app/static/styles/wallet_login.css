@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('/static/images/background.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
+button#connectWallet {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    z-index: 20;
+}
+
+button#connectWallet:hover {
+    background-color: #daa520;
+}
+
+button#connectWallet:active {
+    background-color: #b8860b;
+}
+
+@media (max-width: 600px) {
+    button#connectWallet {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

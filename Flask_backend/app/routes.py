@@ -28,19 +28,6 @@ def get_login():
     login_url = f"{app.config['URL']}/login/{temp_code}"
     return jsonify({"login_url": login_url, "pairing_key": pairing_key})
     
-    
-    # button_html = f'''
-    #         <button onclick="window.open('{login_url}', '_blank')">
-    #             Login
-    #         </button>
-    #         '''
-    
-    # return jsonify({
-    #     "html": button_html,
-    #     "pairing_key": pairing_key
-    # })
-
-
 
 @app.route('/login/<temp_code>', methods=['POST', 'GET'])
 def login(temp_code):
@@ -64,6 +51,31 @@ def login(temp_code):
 
     return jsonify({"error": "Invalid or expired temp code"}), 400
 
+
+@app.route('/api/publickey', methods=['GET', 'POST'])
+def wallet_login():
+    try:
+        if request.method == 'GET':
+            return render_template('wallet_login.html')
+        
+        data = request.get_json()
+        public_key = data.get('publicKey')
+        
+        print(public_key)
+
+        if not public_key:
+            return jsonify({"error": "Public key is required"}), 400
+
+        # Here you might want to add logic to handle the public key
+        # For example, storing it in a database or associating it with a user
+
+        return jsonify({
+            "message": "Logged in successfully with wallet!",
+            "publicKey": public_key
+        }), 200
+        
+    except Exception as e:
+        return jsonify({"error": "An unexpected error occurred"}), 500
 
 # Route to get user information based on pairing key
 @app.route('/get_user_info', methods=['GET'])
