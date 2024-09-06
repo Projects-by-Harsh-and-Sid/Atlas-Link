@@ -89,6 +89,35 @@ def order_data_by_assets(assets):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route('/account_details/<account>')
+def account_details(account):
+
+    
+    #  add asset_id to the request query
+    account = str(account)
+    
+    
+    Node_All_Data_API_URL = f"{app.config["Atlas_data"]}/api/get_account_details"
+    
+    
+    try:
+        # Send a GET request to the Node.js API
+        response = requests.post(Node_All_Data_API_URL, params={"account": account})
+
+        # If the request was successful, return the response from Node.js
+        if response.status_code == 200:
+            return jsonify(response.json()), 200
+        else:
+            return jsonify({
+                "error": "Failed to fetch data from Node.js API",
+                "status_code": response.status_code
+            }), response.status_code
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 @app.route('/transaction_details.json')
