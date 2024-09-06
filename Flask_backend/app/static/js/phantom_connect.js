@@ -18,7 +18,3 @@ export async function connectToPhantom() {
 // add an event listener
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const button = document.getElementById('connectToPhantom');
-//     button.addEventListener('click', connectToPhantom);
-// });
