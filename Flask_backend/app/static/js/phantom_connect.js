@@ -1,4 +1,8 @@
-async function connectToPhantom() {
+
+
+
+
+export async function connectToPhantom() {
     if (typeof window.solana === 'undefined') {
         throw new Error("Phantom wallet is not installed!");
     }
@@ -13,3 +17,8 @@ async function connectToPhantom() {
         throw new Error("Failed to connect to Phantom wallet.");
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('connectToPhantom');
+    button.addEventListener('click', connectToPhantom);
+});

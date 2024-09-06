@@ -6,16 +6,22 @@
     <title>Phantom Testnet Transaction Example</title>
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="https://unpkg.com/buffer@6.0.3/index.js"></script>
-    <script src="{{url_for('static', filename='js/phantom_wallet.js')}}"></script>
 
+    <script type="module" src="{{url_for('static', filename='js/phantom_connect.js')}}">
+        window.connectToPhantom = connectToPhantom;
+    </script>
 
 </head>
 <body>
     <h1>Phantom Testnet Transaction Example</h1>
     <button onclick="initiateTransaction()">Initiate Testnet Transaction</button>
-    <button onclick="connectToPhantom()">Connect to Wallet</button>
+    <button id="connectToPhantom">Connect to Wallet</button>
+
+
+
 
     <script type="module">
+
         // Import Buffer from the buffer library
         import { Buffer } from 'https://cdn.jsdelivr.net/npm/buffer@6.0.3/+esm';
 
@@ -96,7 +102,7 @@
 
         // Make initiateTransaction available globally
         window.initiateTransaction = initiateTransaction;
-        window.connectToPhantom = connectToPhantom;
+        
     </script>
 </body>
 </html>
