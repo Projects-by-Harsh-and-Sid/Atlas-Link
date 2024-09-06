@@ -10,6 +10,7 @@
   "description": "",
   "dependencies": {
     "@solana/web3.js": "^1.95.3",
-    "@staratlas/factory": "^0.7.1"
+    "@staratlas/factory": "^0.7.1",
+    "express": "^4.19.2"
   }
 }
