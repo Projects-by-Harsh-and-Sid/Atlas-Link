@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from app import app
 
 import uuid
@@ -7,6 +7,12 @@ import uuid
 # In-memory stores (use a database in production)
 temp_codes = {}  # Stores temp codes and pairing keys
 user_sessions = {}  # Maps pairing keys to user IDs
+
+
+
+@app.route('/')
+def home():
+    return render_template('main.html')
 
 # Route to generate login link with temp_code and pairing key
 @app.route('/getlogin', methods=['GET'])
@@ -74,3 +80,37 @@ def get_user_info():
         return jsonify(user_info)
     
     return jsonify({"error": "Invalid or missing pairing key"}), 401
+
+
+
+@app.route('/transaction')
+def transaction():
+    return render_template('transaction.html')
+
+@app.route('/transaction_details.json')
+def transaction_details():
+    return send_from_directory('static', 'transaction_details.json')
+
+
+@app.route('/connect_wallet', methods=['GET','POST'])
+def connect_wallet():
+    data = request.json
+    public_key = data.get('publicKey')
+    
+    if public_key:
+        # session['wallet_public_key'] = public_key
+        print(public_key)
+        return jsonify({"status": "success", "message": f"Connected with public key: {public_key}"})
+    else:
+        return jsonify({"status": "error", "message": "No public key provided"}), 400
+
+@app.route('/get_wallet_status')
+def get_wallet_status():
+    # public_key = session.get('wallet_public_key')
+    public_key = None
+    if public_key:
+        return jsonify({"status": "connected", "publicKey": public_key})
+    else:
+        return jsonify({"status": "disconnected"})
+
+

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Button Example</title>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 </head>
 <body>
+    
     <h1>Welcome to the Flask Button Example</h1>
 
     <a href="{{ url_for('transaction') }}">
@@ -14,5 +16,58 @@
     <a href="{{ url_for('all_order_data') }}">
         <button>Go to data Page</button>
     </a>
+    <button id="connectButton" onclick="connectWallet()">Connect Wallet</button>
+    <p id="status"></p>
+
+    <script>
+    async function connectWallet() {
+        if (typeof window.solana === 'undefined') {
+            alert("Phantom wallet is not installed!");
+            return;
+        }
+
+        console.log(window.solana)
+
+        console.log("Connecting to wallet...");
+
+        try {
+            console.log("Requesting connection...");
+            const resp = await window.solana.connect({ onlyIfTrusted: false });
+            console.log("Connected to wallet. Public key:", resp.publicKey.toString());
+            const publicKey = resp.publicKey.toString();
+            
+            const response = await fetch('/connect_wallet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ publicKey: publicKey }),
+            });
+
+            const result = await response.json();
+            if (result.status === 'success') {
+                document.getElementById('status').textContent = `Connected: ${publicKey}`;
+                document.getElementById('connectButton').style.display = 'none';
+            } else {
+                throw new Error(result.message);
+            }
+        } catch (error) {
+            console.error("Error connecting to wallet:", error);
+            alert("Error connecting to wallet: " + error.message);
+        }
+    }
+
+    async function checkWalletStatus() {
+        const response = await fetch('/get_wallet_status');
+        const result = await response.json();
+        if (result.status === 'connected') {
+            document.getElementById('status').textContent = `Connected: ${result.publicKey}`;
+            document.getElementById('connectButton').style.display = 'none';
+        }
+    }
+
+    // Check wallet status on page load
+    checkWalletStatus();
+    </script>
 </body>
 </html>

@@ -9,14 +9,7 @@ import json
 import uuid
 
 
-@app.route('/')
-def home():
-    return render_template('main.html')
 
-
-@app.route('/transaction')
-def transaction():
-    return render_template('transaction.html')
 
 
 NODE_API_URL = f"{app.config["Atlas_data"]}"
@@ -105,8 +98,6 @@ def rewards_details(account):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
 
 
-@app.route('/transaction_details.json')
-def transaction_details():
-    return send_from_directory('static', 'transaction_details.json')

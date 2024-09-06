@@ -6,10 +6,14 @@
     <title>Phantom Testnet Transaction Example</title>
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="https://unpkg.com/buffer@6.0.3/index.js"></script>
+    <script src="{{url_for('static', filename='js/phantom_wallet.js')}}"></script>
+
+
 </head>
 <body>
     <h1>Phantom Testnet Transaction Example</h1>
     <button onclick="initiateTransaction()">Initiate Testnet Transaction</button>
+    <button onclick="connectToPhantom()">Connect to Wallet</button>
 
     <script type="module">
         // Import Buffer from the buffer library
@@ -35,20 +39,7 @@
             }
         }
 
-        async function connectToPhantom() {
-            if (typeof window.solana === 'undefined') {
-                throw new Error("Phantom wallet is not installed!");
-            }
 
-            try {
-                const resp = await window.solana.connect();
-                console.log("Connected to Phantom. Public key:", resp.publicKey.toString());
-                return resp.publicKey;
-            } catch (err) {
-                console.error("Error connecting to Phantom:", err);
-                throw new Error("Failed to connect to Phantom wallet.");
-            }
-        }
 
         async function initiateTransaction() {
             try {
@@ -105,6 +96,7 @@
 
         // Make initiateTransaction available globally
         window.initiateTransaction = initiateTransaction;
+        window.connectToPhantom = connectToPhantom;
     </script>
 </body>
 </html>
