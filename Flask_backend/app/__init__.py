@@ -11,7 +11,7 @@ info = yaml.load(open('info.yaml'), Loader=yaml.FullLoader)
 app.config["URL"] = info['ngrok_url']
 app.config["Atlas_data"] = info['atlas_data']
 
-app.config["Item_data"] = json.load(open(r'\resources\detial_items.json'))
+app.config["Item_data"] = json.load(open(r'resources\detial_items.json'))
 
 
 from app import routes
