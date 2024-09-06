@@ -7,36 +7,66 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.top-bar {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
     position: relative;
-    height: 100%;
+    min-height: 400px;
+    min-width: 400px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+
+}
+
+.separator {
+    margin: 0 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 button#connectWallet {
-    position: absolute;
-    top: 10px;
-    right: 20px;
     background-color: goldenrod;
     color: black;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    z-index: 20;
 }
 
 button#connectWallet:hover {
@@ -49,7 +79,16 @@ button#connectWallet:active {
 
 @media (max-width: 600px) {
     button#connectWallet {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+    
+    .logo-image {
+        max-width: 80px;
+        max-height: 80px;
+    }
+    
+    .separator {
+        font-size: 20px;
     }
 }

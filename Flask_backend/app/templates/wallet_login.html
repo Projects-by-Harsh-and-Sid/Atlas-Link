@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/wallet_login.css') }}">
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
+        <h1>Atlas Link</h1>
+        
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/atlas.png') }}" alt="Image 1" class="logo-image">
+            <span class="separator">x</span>
+            <img src="{{ url_for('static', filename='images/gpt.svg') }}" alt="Image 2" class="logo-image">
+        </div>
+        
         <button id="connectWallet">Connect to Wallet</button>
     </div>
     <script> 
