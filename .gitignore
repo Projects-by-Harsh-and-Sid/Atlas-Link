@@ -1,3 +1,2 @@
-# all python runtime files and pycache directories and subdirectories
-*.pyc
-**/__pycache__/
+__pycache__/
+*.py[cod]
