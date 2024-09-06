@@ -168,7 +168,27 @@ def rewards_details(account):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/connect_wallet', methods=['GET','POST'])
+def connect_wallet():
+    data = request.json
+    public_key = data.get('publicKey')
+    
+    if public_key:
+        # session['wallet_public_key'] = public_key
+        print(public_key)
+        return jsonify({"status": "success", "message": f"Connected with public key: {public_key}"})
+    else:
+        return jsonify({"status": "error", "message": "No public key provided"}), 400
 
+@app.route('/get_wallet_status')
+def get_wallet_status():
+    # public_key = session.get('wallet_public_key')
+    public_key = None
+    if public_key:
+        return jsonify({"status": "connected", "publicKey": public_key})
+    else:
+        return jsonify({"status": "disconnected"})
 
 @app.route('/transaction_details.json')
 def transaction_details():
