@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Button Example</title>
+</head>
+<body>
+    <h1>Welcome to the Flask Button Example</h1>
+
+    <a href="{{ url_for('transaction') }}">
+        <button>Go to Transaction Page</button>
+    </a>
+    <a href="{{ url_for('all_order_data') }}">
+        <button>Go to data Page</button>
+    </a>
+</body>
+</html>

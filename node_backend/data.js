@@ -13,12 +13,12 @@ const programId = new PublicKey('traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg');
 const gmClientService = new GmClientService();
 
 // Define a route to get all open orders
-app.get('/api/get_open_orders', async (req, res) => {
+app.get('/api/get_all_open_orders', async (req, res) => {
     try {
         const allOrders = await gmClientService.getAllOpenOrders(connection, programId);
         
         // Save the open orders to a file
-        fs.writeFileSync('open_orders.json', JSON.stringify(allOrders, null, 2));
+        // fs.writeFileSync('open_orders.json', JSON.stringify(allOrders, null, 2));
 
         // Send the orders as the API response
         res.json({
@@ -35,6 +35,38 @@ app.get('/api/get_open_orders', async (req, res) => {
         });
     }
 });
+
+
+app.post('/api/get_open_orders_from_asset', async (req, res) => {
+    try {
+
+
+        // get asse_id from request
+        let assetId = req.query.asset_id;
+
+        assetId = new PublicKey(assetId);
+
+        const allOrders = await gmClientService.getOpenOrdersForAsset(connection,assetId ,programId);
+        
+        // Save the open orders to a file
+        // fs.writeFileSync('open_orders.json', JSON.stringify(allOrders, null, 2));
+
+        // Send the orders as the API response
+        res.json({
+            message: 'Open orders retrieved successfully',
+            orders: allOrders,
+            count: allOrders.length
+        });
+
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({
+            message: 'An error occurred while fetching open orders',
+            error: error.toString()
+        });
+    }
+});
+
 
 // Start the server
 app.listen(port, () => {
