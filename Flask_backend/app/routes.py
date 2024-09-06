@@ -19,7 +19,7 @@ def get_login():
     temp_codes[temp_code] = pairing_key  # Save pairing key linked to temp_code
 
     # # Return the login URL with the temp_code and the pairing key
-    login_url = f"{app.config["URL"]}/login/{temp_code}"
+    login_url = f"{app.config['URL']}/login/{temp_code}"
     return jsonify({"login_url": login_url, "pairing_key": pairing_key})
     
     
