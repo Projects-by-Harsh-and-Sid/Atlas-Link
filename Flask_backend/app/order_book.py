@@ -34,6 +34,35 @@ def all_order_data():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/orders_by_assets_raw/<assets>', methods=['GET'])
+def order_data_by_assets_raw(assets):
+
+    
+    #  add asset_id to the request query
+    assets = str(assets)
+    
+    
+    Node_All_Data_API_URL = f"{app.config["Atlas_data"]}/api/get_open_orders_from_asset"
+    
+    
+    try:
+        # Send a GET request to the Node.js API
+        response = requests.post(Node_All_Data_API_URL, params={"asset_id": assets})
+
+        # If the request was successful, return the response from Node.js
+        if response.status_code == 200:
+            
+            return jsonify(response.json()), 200
+        else:
+            return jsonify({
+                "error": "Failed to fetch data from Node.js API",
+                "status_code": response.status_code
+            }), response.status_code
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 
 def process_orders_assets(data):
@@ -61,14 +90,12 @@ def process_orders_assets(data):
     }
 
 
-
-
-@app.route('/orders_by_assets/<assets>', methods=['GET'])
-def order_data_by_assets(assets):
+@app.route('/orders_by_assets/<mint_id>', methods=['GET'])
+def order_data_by_assets(mint_id):
 
     
     #  add asset_id to the request query
-    assets = str(assets)
+    assets = str(mint_id)
     
     
     Node_All_Data_API_URL = f"{app.config["Atlas_data"]}/api/get_open_orders_from_asset"
@@ -99,35 +126,6 @@ def order_data_by_assets(assets):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-@app.route('/orders_by_assets_raw/<assets>', methods=['GET'])
-def order_data_by_assets_raw(assets):
-
-    
-    #  add asset_id to the request query
-    assets = str(assets)
-    
-    
-    Node_All_Data_API_URL = f"{app.config["Atlas_data"]}/api/get_open_orders_from_asset"
-    
-    
-    try:
-        # Send a GET request to the Node.js API
-        response = requests.post(Node_All_Data_API_URL, params={"asset_id": assets})
-
-        # If the request was successful, return the response from Node.js
-        if response.status_code == 200:
-            
-            return jsonify(response.json()), 200
-        else:
-            return jsonify({
-                "error": "Failed to fetch data from Node.js API",
-                "status_code": response.status_code
-            }), response.status_code
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
 
 
 
@@ -164,12 +162,12 @@ def calculate_orderbook_summary(orders):
         },
     }
 
-@app.route('/orderbook_summary/<asset_id>', methods=['GET'])
-def get_orderbook_summary(asset_id):
+@app.route('/orderbook_summary/<mint_id>', methods=['GET'])
+def get_orderbook_summary(mint_id):
     Node_All_Data_API_URL = f"{app.config['Atlas_data']}/api/get_open_orders_from_asset"
     
     try:
-        response = requests.post(Node_All_Data_API_URL, params={"asset_id": asset_id})
+        response = requests.post(Node_All_Data_API_URL, params={"asset_id": mint_id})
         
         if response.status_code == 200:
             data = response.json()

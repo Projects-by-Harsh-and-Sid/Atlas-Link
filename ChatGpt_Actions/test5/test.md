@@ -85,6 +85,41 @@ If the user wants to link to wallet do the following, this is also a prerequisit
 - If the pairing key is invalid or expired, inform the user and prompt them to log in again by restarting the authentication process.
 - Ensure the `pairing_key` is stored securely and used only for authenticated requests.
 
+
+
+# marketplace order data use the following :
+
+1. Orders by Asset (/orders_by_assets/{mint_id}):
+   - Use this endpoint to retrieve buy and sell orders for a specific asset.
+   - Present the data in two separate tables: one for buy orders and one for sell orders.
+   - Each table should include columns for Price (USDC) and Quantity.
+   - Sort buy orders from highest to lowest price, and sell orders from lowest to highest price.
+   - Use the code interpreter to create a visual representation of the order book, such as a depth chart.
+
+2. Orderbook Summary (/orderbook_summary/{mint_id}):
+   - Use this endpoint to get a statistical summary of the orderbook for a specific asset.
+   - Present the summary data in a table format, including:
+     - Number of orders
+     - Minimum and maximum prices
+     - Average and median prices
+     - Total quantity
+     - Price quartiles
+   - Use the code interpreter to create visualizations based on the summary data, such as:
+     - A box plot of buy and sell prices
+     - A histogram of price distribution
+     - A line chart showing the cumulative volume at different price levels
+
+When presenting data for multiple items:
+   - Use the code interpreter to make separate API calls for each item.
+   - Compile the data into a single table or visualization for easy comparison.
+   - For orderbook summaries of multiple items, consider creating a comparative chart (e.g., a grouped bar chart) to show key metrics across different assets.
+
+Always provide context and interpretation along with the raw data and visualizations. Explain what the numbers and charts mean in terms of market dynamics, such as liquidity, price pressure, and potential trading opportunities.
+
+Remember to handle errors gracefully. If an API call fails or returns no data, inform the user and suggest alternative actions or items to explore.
+
+
+
 # Actions
 
 ``` yaml
@@ -178,7 +213,129 @@ paths:
                   error:
                     type: string
                     description: Error message
+  /orders_by_assets/{mint_id}:
+    get:
+      description: Retrieves buy and sell orders for a specific asset
+      operationId: GetOrdersByAsset
+      parameters:
+        - name: mint_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The mint ID of the asset
+      responses:
+        '200':
+          description: Orders retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  buy_orders:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        price_usdc:
+                          type: number
+                        quantity:
+                          type: integer
+                  sell_orders:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        price_usdc:
+                          type: number
+                        quantity:
+                          type: integer
+        '404':
+          description: No orders found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  status_code:
+                    type: integer
+
+  /orderbook_summary/{mint_id}:
+    get:
+      description: Retrieves a summary of the orderbook for a specific asset
+      operationId: GetOrderbookSummary
+      parameters:
+        - name: mint_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The mint ID of the asset
+      responses:
+        '200':
+          description: Orderbook summary retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  buy_orders:
+                    $ref: '#/components/schemas/OrderSummary'
+                  sell_orders:
+                    $ref: '#/components/schemas/OrderSummary'
+                  spread:
+                    type: number
+                  mid_price:
+                    type: number
+        '404':
+          description: No orders found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  status_code:
+                    type: integer
+
 components:
-  schemas: {}
+  schemas:
+    OrderSummary:
+      type: object
+      properties:
+        count:
+          type: integer
+        min_price:
+          type: number
+        max_price:
+          type: number
+        avg_price:
+          type: number
+        median_price:
+          type: number
+        total_quantity:
+          type: integer
+        price_quartiles:
+          type: array
+          items:
+            type: number
+        price_histogram:
+          type: object
+          properties:
+            counts:
+              type: array
+              items:
+                type: integer
+            bin_edges:
+              type: array
+              items:
+                type: number
 
   ```

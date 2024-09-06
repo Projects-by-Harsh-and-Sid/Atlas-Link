@@ -1,0 +1,47 @@
+{
+    "access": [
+        "access"
+    ],
+    "structure": [
+        "cargo storage",
+        "crafting station",
+        "landing pad",
+        "paint",
+        "residential",
+        "structure",
+        "yard item"
+    ],
+    "collectible": [
+        "collectible",
+        "cosmetic",
+        "emergence",
+        "equipment",
+        "pet",
+        "rebirth",
+        "sage",
+        "solarpunk"
+    ],
+    "currency": [
+        "currency"
+    ],
+    "memories": [
+        "memories"
+    ],
+    "resource": [
+        "mining",
+        "resource"
+    ],
+    "crew": [
+        "mud",
+        "oni",
+        "pack",
+        "ustur"
+    ],
+    "ship": [
+        "ship"
+    ],
+    "story": [
+        "story",
+        null
+    ]
+}
