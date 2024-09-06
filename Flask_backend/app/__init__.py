@@ -16,3 +16,4 @@ app.config["Item_data"] = json.load(open(r'resources\detial_items.json'))
 
 from app import routes
 from app import data_routes
+from app import order_book
