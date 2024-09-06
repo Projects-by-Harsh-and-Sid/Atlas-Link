@@ -1,5 +1,5 @@
 const { Connection, PublicKey } = require('@solana/web3.js');
-const { GmClientService, getAccountInfo } = require('@staratlas/factory');
+const { GmClientService, getPlayer } = require('@staratlas/factory');
 const express = require('express');
 const fs = require('fs');
 
@@ -11,13 +11,18 @@ const port = 3000;
 
 // Replace with your actual Solana RPC endpoint and program ID
 const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=5f413c9c-5af3-4a7e-bfc3-e0bc546b9a3e');
-const programId = new PublicKey('traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg');
+const marketplace_programId = new PublicKey('traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg');
 const gmClientService = new GmClientService();
+
+const factiondata_programid = new PublicKey('FACTNmq2FhA2QNTnGM2aWJH3i7zT3cND5CgvjYTjyVYe');
+const playeritems_programid = new PublicKey('pv1ttom8tbyh83C1AVh6QH2naGRdVQUVt3HY1Yst5sv');
+
+
 
 // Define a route to get all open orders
 app.get('/api/get_all_open_orders', async (req, res) => {
     try {
-        const allOrders = await gmClientService.getAllOpenOrders(connection, programId);
+        const allOrders = await gmClientService.getAllOpenOrders(connection, marketplace_programId);
         
         // Save the open orders to a file
         // fs.writeFileSync('open_orders.json', JSON.stringify(allOrders, null, 2));
@@ -48,7 +53,7 @@ app.post('/api/get_open_orders_from_asset', async (req, res) => {
 
         assetId = new PublicKey(assetId);
 
-        const allOrders = await gmClientService.getOpenOrdersForAsset(connection,assetId ,programId);
+        const allOrders = await gmClientService.getOpenOrdersForAsset(connection,assetId ,marketplace_programId);
         
         // Save the open orders to a file
         // fs.writeFileSync('open_orders.json', JSON.stringify(allOrders, null, 2));
@@ -86,7 +91,7 @@ app.post('/api/get_account_details', async (req, res) => {
         const publicKey = new PublicKey(account);
 
         // Fetch account details using the publicKey
-        const accountDetails = await getAccountInfo(connection, publicKey);
+        const accountDetails = await getPlayer(connection, publicKey,playerprofile_programid);
         // Send the orders as the API response
         res.json({
             message: 'Account retrieved successfully',
