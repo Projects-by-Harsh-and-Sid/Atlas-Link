@@ -1,0 +1,6 @@
+- In the static folder there is transaction.png image file.
+- Add text
+- Convert this to svg using 
+- remove the top layer which is white https://www.freeconvert.com/png-to-svg
+- https://www.iloveimg.com/resize-image/resize-svg#resize-options,pixels 
+- resize width is 300

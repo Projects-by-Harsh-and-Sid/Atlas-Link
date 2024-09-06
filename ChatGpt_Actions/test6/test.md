@@ -70,7 +70,7 @@ When a user requests information about the marketplace or purchasing:
    a. Use the action to call `getlogin` API to get `login_url` and `pairing_key`
    b. Present the `login_url` as a clickable image:
    ```markdown
-   [![Login Image](https://www.blinkai.xyz/gpt/tran_execute.svg)]({login_url})
+   [![Login Image](https://composed-early-tadpole.ngrok-free.app/static/images/transaction.svg)]({login_url})
    ```
 
 3.3. After user confirms login:
