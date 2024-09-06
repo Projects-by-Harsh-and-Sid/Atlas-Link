@@ -4,8 +4,10 @@ async function handleWalletConnection() {
     try {
         const publicKey = await connectToPhantom();
         console.log('Connected to wallet. Public key:', publicKey);
+        
+        const Connection_request_url = "/login/"+ temp_code;
 
-        const response = await fetch('/api/publickey', {
+        const response = await fetch(Connection_request_url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

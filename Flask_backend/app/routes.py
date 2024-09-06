@@ -5,8 +5,7 @@ import uuid
 
 
 # In-memory stores (use a database in production)
-temp_codes = {}  # Stores temp codes and pairing keys
-user_sessions = {}  # Maps pairing keys to user IDs
+temp_codes = {}  # Stores temp codes and pairing ke
 
 
 
@@ -17,6 +16,11 @@ def home():
 # Route to generate login link with temp_code and pairing key
 @app.route('/getlogin', methods=['GET'])
 def get_login():
+    """
+    Curl command to test this route:
+    curl -X GET -H "Openai-Conversation-Id: abc123" http://localhost:5000/getlogin
+    
+    """
     
     pairing_key = str(request.headers.get("Openai-Conversation-Id")) #  Openai-Ephemeral-User-Id
     
@@ -29,34 +33,35 @@ def get_login():
     return jsonify({"login_url": login_url, "pairing_key": pairing_key})
     
 
+# @app.route('/login/<temp_code>', methods=['POST', 'GET'])
+# def login(temp_code):
+#     if request.method == 'GET':
+#         # Render the login form when the page is visited
+#         return render_template('login.html', temp_code=temp_code)
+    
+#     if request.method == 'POST':
+#         # Handle form submission
+#         username = request.form.get('username')  # Get username from form
+
+#         if temp_code in temp_codes:
+#             # Assume successful login, associate pairing key with user ID
+#             pairing_key = temp_codes[temp_code]
+#             user_id = username  # In practice, map this to a real user ID
+
+#             # Store the mapping of pairing_key to user ID
+#             user_sessions[pairing_key] = user_id
+
+#             return jsonify({"message": f"User {username} logged in successfully!"})
+
+#     return jsonify({"error": "Invalid or expired temp code"}), 400
+
+
 @app.route('/login/<temp_code>', methods=['POST', 'GET'])
 def login(temp_code):
-    if request.method == 'GET':
-        # Render the login form when the page is visited
-        return render_template('login.html', temp_code=temp_code)
-    
-    if request.method == 'POST':
-        # Handle form submission
-        username = request.form.get('username')  # Get username from form
 
-        if temp_code in temp_codes:
-            # Assume successful login, associate pairing key with user ID
-            pairing_key = temp_codes[temp_code]
-            user_id = username  # In practice, map this to a real user ID
-
-            # Store the mapping of pairing_key to user ID
-            user_sessions[pairing_key] = user_id
-
-            return jsonify({"message": f"User {username} logged in successfully!"})
-
-    return jsonify({"error": "Invalid or expired temp code"}), 400
-
-
-@app.route('/api/publickey', methods=['GET', 'POST'])
-def wallet_login():
     try:
         if request.method == 'GET':
-            return render_template('wallet_login.html')
+            return render_template('wallet_login.html',  temp_code=temp_code)
         
         data = request.get_json()
         public_key = data.get('publicKey')
@@ -67,6 +72,13 @@ def wallet_login():
             return jsonify({"error": "Public key is required"}), 400
 
         # Here you might want to add logic to handle the public key
+        
+        pairing_key = temp_codes[temp_code]
+        user_id = public_key  # In practice, map this to a real user ID
+
+        # Store the mapping of pairing_key to user ID
+        app.config["user_pairs"][pairing_key] = user_id
+        
         # For example, storing it in a database or associating it with a user
 
         return jsonify({
@@ -76,14 +88,18 @@ def wallet_login():
         
     except Exception as e:
         return jsonify({"error": "An unexpected error occurred"}), 500
+    
+    
+
+
 
 # Route to get user information based on pairing key
 @app.route('/get_user_info', methods=['GET'])
 def get_user_info():
     pairing_key = str(request.headers.get("Openai-Conversation-Id"))
 
-    if pairing_key in user_sessions:
-        user_id = user_sessions[pairing_key]
+    if pairing_key in app.config["user_pairs"]:
+        user_id = app.config["user_pairs"][pairing_key]
         # Simulate fetching user info
         user_info = {
             "user_id": user_id,
