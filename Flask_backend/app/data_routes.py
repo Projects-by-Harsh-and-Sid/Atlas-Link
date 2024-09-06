@@ -91,33 +91,73 @@ def order_data_by_assets(assets):
         return jsonify({"error": str(e)}), 500
     
 
-@app.route('/account_details/<account>')
-def account_details(account):
-
+@app.route('/player_details/<account>')
+def player_details(account):
     
-    #  add asset_id to the request query
     account = str(account)
     
-    
-    Node_All_Data_API_URL = f"{app.config["Atlas_data"]}/api/get_account_details"
-    
+    star_atlas_url = f"https://galaxy.staratlas.com/players/{account}"
     
     try:
-        # Send a GET request to the Node.js API
-        response = requests.post(Node_All_Data_API_URL, params={"account": account})
+        # Send a GET request to the Star Atlas API
+        response = requests.get(star_atlas_url)
 
-        # If the request was successful, return the response from Node.js
+        # If the request was successful, return the response from Star Atlas
         if response.status_code == 200:
             return jsonify(response.json()), 200
         else:
             return jsonify({
-                "error": "Failed to fetch data from Node.js API",
+                "error": "Failed to fetch data from Star Atlas API",
                 "status_code": response.status_code
             }), response.status_code
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+    
+@app.route('/profile_details/<account>')
+def profile_details(account):
+    account = str(account)
+    
+    star_atlas_url = f"https://galaxy.staratlas.com/profiles/{account}"
+    
+    try:
+        # Send a GET request to the Star Atlas API
+        response = requests.get(star_atlas_url)
+
+        # If the request was successful, return the response from Star Atlas
+        if response.status_code == 200:
+            return jsonify(response.json()), 200
+        else:
+            return jsonify({
+                "error": "Failed to fetch data from Star Atlas API",
+                "status_code": response.status_code
+            }), response.status_code
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/rewards_details/<account>')
+def rewards_details(account):
+    account = str(account)
+    
+    star_atlas_url = f"https://galaxy.staratlas.com/rewards/{account}"
+    
+    try:
+        # Send a GET request to the Star Atlas API
+        response = requests.get(star_atlas_url)
+
+        # If the request was successful, return the response from Star Atlas
+        if response.status_code == 200:
+            return jsonify(response.json()), 200
+        else:
+            return jsonify({
+                "error": "Failed to fetch data from Star Atlas API",
+                "status_code": response.status_code
+            }), response.status_code
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/transaction_details.json')
