@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import requests
 from app import app
 
@@ -15,14 +15,20 @@ TRANSACTION_PARAMS = {
     'orderSide': 'sell'
 }
 
+
+@app.route('/perform_transaction')
+def index():
+    return render_template('transaction_items.html')
+
 @app.route('/initiate_transaction', methods=['GET'])
 def initiate_transaction():
     try:
+        
         # Make a request to the Express.js server with hardcoded parameters
         response = requests.get(f'{EXPRESS_SERVER_URL}/api/initiate_transaction', params=TRANSACTION_PARAMS)
         
-        
-        
+        # get the 'trasaction field from json
+    
         # Check if the request was successful
         response.raise_for_status()
 
