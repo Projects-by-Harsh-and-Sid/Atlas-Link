@@ -16,6 +16,7 @@ const gmClientService = new GmClientService();
 
 const factiondata_programid = new PublicKey('FACTNmq2FhA2QNTnGM2aWJH3i7zT3cND5CgvjYTjyVYe');
 const playeritems_programid = new PublicKey('pv1ttom8tbyh83C1AVh6QH2naGRdVQUVt3HY1Yst5sv');
+const playerprofile_programid = new PublicKey('pprofELXjL5Kck7Jn5hCpwAL82DpTkSYBENzahVtbc9');
 
 
 
@@ -74,39 +75,112 @@ app.post('/api/get_open_orders_from_asset', async (req, res) => {
     }
 });
 
-app.post('/api/get_account_details', async (req, res) => {
+// app.post('/api/get_account_details', async (req, res) => {
+//     try {
+//         // Get the account parameter from request query
+//         const account = req.query.account;
+
+//         console.log("account",account);
+
+//         if (!account) {
+//             return res.status(400).json({
+//                 message: 'Account parameter is required'
+//             });
+//         }
+
+//         // Convert the account string to a PublicKey object
+//         const publicKey = new PublicKey(account);
+
+//         // Fetch account details using the publicKey
+//         const accountDetails = await getPlayer(connection, publicKey,playerprofile_programid);
+//         // Send the orders as the API response
+//         res.json({
+//             message: 'Account retrieved successfully',
+//             account: accountDetails,
+//             count: accountDetails.length
+//         });
+
+//     } catch (error) {
+//         console.error('Error:', error);
+//         res.status(500).json({
+//             message: 'An error occurred while fetching open orders',
+//             error: error.toString()
+//         });
+//     }
+// });
+
+app.get('/api/initiate_transaction', async (req, res) => {
     try {
-        // Get the account parameter from request query
-        const account = req.query.account;
+        // Extract parameters from the request
+        const { 
+            orderCreator,
+            itemMint,
+            quoteMint,
+            quantity,
+            uiPrice,
+            programId,
+            orderSide
+        } = req.query;
 
-        console.log("account",account);
-
-        if (!account) {
-            return res.status(400).json({
-                message: 'Account parameter is required'
-            });
+        // Validate input parameters
+        if (!orderCreator || !itemMint || !quoteMint || !quantity || !uiPrice || !programId || !orderSide) {
+            return res.status(400).json({ message: 'Missing required parameters' });
         }
 
-        // Convert the account string to a PublicKey object
-        const publicKey = new PublicKey(account);
+        // Convert parameters to appropriate types
+        const orderCreatorPubkey = new PublicKey(orderCreator);
+        const itemMintPubkey = new PublicKey(itemMint);
+        const quoteMintPubkey = new PublicKey(quoteMint);
+        const programIdPubkey = new PublicKey(programId);
+        const quantityNum = parseInt(quantity);
+        const uiPriceNum = parseFloat(uiPrice);
+        const orderSideEnum = orderSide.toLowerCase() === 'sell' ? OrderSide.Sell : OrderSide.Buy;
 
-        // Fetch account details using the publicKey
-        const accountDetails = await getPlayer(connection, publicKey,playerprofile_programid);
-        // Send the orders as the API response
+        // Get the price in the correct format
+        const price = await gmClientService.getBnPriceForCurrency(
+            connection,
+            uiPriceNum,
+            quoteMintPubkey,
+            programIdPubkey
+        );
+
+        // Get the initialize order transaction
+        const orderTx = await gmClientService.getInitializeOrderTransaction(
+            connection,
+            orderCreatorPubkey,
+            itemMintPubkey,
+            quoteMintPubkey,
+            quantityNum,
+            price,
+            programIdPubkey,
+            orderSideEnum
+        );
+
+        // Serialize the transaction
+        const serializedTransaction = orderTx.serialize({requireAllSignatures: false}).toString('base64');
+
         res.json({
-            message: 'Account retrieved successfully',
-            account: accountDetails,
-            count: accountDetails.length
+            message: 'Transaction created successfully',
+            transaction: serializedTransaction,
+            orderCreator: orderCreator,
+            itemMint: itemMint,
+            quoteMint: quoteMint,
+            quantity: quantityNum,
+            uiPrice: uiPriceNum,
+            programId: programId,
+            orderSide: orderSide
         });
 
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({
-            message: 'An error occurred while fetching open orders',
+            message: 'An error occurred while creating the transaction',
             error: error.toString()
         });
     }
 });
+
+
 
 
 
