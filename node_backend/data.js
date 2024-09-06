@@ -1,5 +1,9 @@
 const { Connection, PublicKey } = require('@solana/web3.js');
 const { GmClientService, getPlayer } = require('@staratlas/factory');
+
+const { connectToPhantom } = require('./wallet-connect');
+
+
 const express = require('express');
 const fs = require('fs');
 
@@ -179,6 +183,18 @@ app.get('/api/initiate_transaction', async (req, res) => {
         });
     }
 });
+
+
+app.post('/connect-wallet', async (req, res) => {
+    try {
+        console.log("connect wallet");
+        const publicKey = await connectToPhantom();
+        res.json({ status: 'success', publicKey });
+    } catch (error) {
+        res.status(500).json({ status: 'error', message: error.message });
+    }
+});
+
 
 
 
