@@ -62,8 +62,18 @@ def all_order_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/item_detail/<mintid>', methods=['GET'])
+def get_item_detials_by_mint_id(mintid):
+    
+    
+    if mintid in app.config["Item_data"]:
+        return jsonify(app.config["Item_data"][mintid])
+    
+    return jsonify({"error": "Item not found"})
 
-@app.route('/orders_by_assets/<assets>')
+
+
+@app.route('/orders_by_assets/<assets>', methods=['GET'])
 def order_data_by_assets(assets):
 
     
