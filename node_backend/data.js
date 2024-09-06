@@ -1,6 +1,6 @@
 const { Connection, PublicKey } = require('@solana/web3.js');
 const { GmClientService, getPlayer } = require('@staratlas/factory');
-
+const { initiateTransaction } = require('./transaction');
 const { connectToPhantom } = require('./wallet-connect');
 
 
@@ -116,63 +116,27 @@ app.post('/api/get_open_orders_from_asset', async (req, res) => {
 app.get('/api/initiate_transaction', async (req, res) => {
     try {
         // Extract parameters from the request
-        const { 
-            orderCreator,
-            itemMint,
-            quoteMint,
-            quantity,
-            uiPrice,
-            programId,
-            orderSide
-        } = req.query;
+        const params = {
+            orderCreator: req.query.orderCreator,
+            itemMint: req.query.itemMint,
+            quoteMint: req.query.quoteMint,
+            quantity: req.query.quantity,
+            uiPrice: req.query.uiPrice,
+            programId: req.query.programId,
+            orderSide: req.query.orderSide
+        };
 
         // Validate input parameters
-        if (!orderCreator || !itemMint || !quoteMint || !quantity || !uiPrice || !programId || !orderSide) {
+        if (Object.values(params).some(param => !param)) {
             return res.status(400).json({ message: 'Missing required parameters' });
         }
 
-        // Convert parameters to appropriate types
-        const orderCreatorPubkey = new PublicKey(orderCreator);
-        const itemMintPubkey = new PublicKey(itemMint);
-        const quoteMintPubkey = new PublicKey(quoteMint);
-        const programIdPubkey = new PublicKey(programId);
-        const quantityNum = parseInt(quantity);
-        const uiPriceNum = parseFloat(uiPrice);
-        const orderSideEnum = orderSide.toLowerCase() === 'sell' ? OrderSide.Sell : OrderSide.Buy;
-
-        // Get the price in the correct format
-        const price = await gmClientService.getBnPriceForCurrency(
-            connection,
-            uiPriceNum,
-            quoteMintPubkey,
-            programIdPubkey
-        );
-
-        // Get the initialize order transaction
-        const orderTx = await gmClientService.getInitializeOrderTransaction(
-            connection,
-            orderCreatorPubkey,
-            itemMintPubkey,
-            quoteMintPubkey,
-            quantityNum,
-            price,
-            programIdPubkey,
-            orderSideEnum
-        );
-
-        // Serialize the transaction
-        const serializedTransaction = orderTx.serialize({requireAllSignatures: false}).toString('base64');
+        const serializedTransaction = await initiateTransaction(connection, params);
 
         res.json({
             message: 'Transaction created successfully',
             transaction: serializedTransaction,
-            orderCreator: orderCreator,
-            itemMint: itemMint,
-            quoteMint: quoteMint,
-            quantity: quantityNum,
-            uiPrice: uiPriceNum,
-            programId: programId,
-            orderSide: orderSide
+            ...params
         });
 
     } catch (error) {
@@ -183,7 +147,6 @@ app.get('/api/initiate_transaction', async (req, res) => {
         });
     }
 });
-
 
 app.post('/connect-wallet', async (req, res) => {
     try {
