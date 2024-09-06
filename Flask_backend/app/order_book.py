@@ -131,19 +131,37 @@ def order_data_by_assets_raw(assets):
 
 
 
+
 def calculate_orderbook_summary(orders):
+    if not orders:
+        return {
+            'count': 0,
+            'min_price': None,
+            'max_price': None,
+            'avg_price': None,
+            'median_price': None,
+            'total_quantity': 0,
+            'price_quartiles': None,
+            'price_histogram': None,
+        }
+    
     prices = [order['price_usdc'] for order in orders]
     quantities = [order['quantity'] for order in orders]
     
+    hist, bin_edges = np.histogram(prices, bins=10)
+    
     return {
         'count': len(orders),
-        'min_price': min(prices) if prices else None,
-        'max_price': max(prices) if prices else None,
-        'avg_price': np.mean(prices) if prices else None,
-        'median_price': np.median(prices) if prices else None,
-        'total_quantity': sum(quantities),
-        'price_quartiles': np.percentile(prices, [25, 50, 75]).tolist() if prices else None,
-        'price_histogram': np.histogram(prices, bins=10) if prices else None,
+        'min_price': float(min(prices)),
+        'max_price': float(max(prices)),
+        'avg_price': float(np.mean(prices)),
+        'median_price': float(np.median(prices)),
+        'total_quantity': int(sum(quantities)),
+        'price_quartiles': [float(q) for q in np.percentile(prices, [25, 50, 75])],
+        'price_histogram': {
+            'counts': hist.tolist(),
+            'bin_edges': bin_edges.tolist()
+        },
     }
 
 @app.route('/orderbook_summary/<asset_id>', methods=['GET'])
@@ -156,7 +174,7 @@ def get_orderbook_summary(asset_id):
         if response.status_code == 200:
             data = response.json()
             
-            if data.get('count') < 1:
+            if data.get('count', 0) < 1:
                 return jsonify({
                     "error": "No orders found",
                     "status_code": response.status_code
@@ -169,8 +187,8 @@ def get_orderbook_summary(asset_id):
             summary = {
                 'buy_orders': calculate_orderbook_summary(buy_orders),
                 'sell_orders': calculate_orderbook_summary(sell_orders),
-                'spread': sell_orders[0]['price_usdc'] - buy_orders[0]['price_usdc'] if sell_orders and buy_orders else None,
-                'mid_price': (sell_orders[0]['price_usdc'] + buy_orders[0]['price_usdc']) / 2 if sell_orders and buy_orders else None,
+                'spread': float(sell_orders[0]['price_usdc'] - buy_orders[0]['price_usdc']) if sell_orders and buy_orders else None,
+                'mid_price': float((sell_orders[0]['price_usdc'] + buy_orders[0]['price_usdc']) / 2) if sell_orders and buy_orders else None,
             }
             
             return jsonify(summary), 200
