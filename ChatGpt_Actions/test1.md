@@ -58,6 +58,27 @@ components:
   schemas: {}
 ```
 
+```
+- Start by checking if the user is authenticated.
+- If not authenticated, perform the following:
+  1. Call the `getlogin` action to obtain `login_url` and `pairing_key`.
+  2. Present the `login_url` as a clickable image to the user, embedding the image from https://www.blinkai.xyz/gpt/tran_execute.svg.
+  3. The image should be embedded as follows:
+[![Login Image](https://www.blinkai.xyz/gpt/tran_execute.svg)]({https://link_url}) use link that you get from the api call
+
+
+
+- After the user confirms login:
+  1. Use the stored `pairing_key` to call the `get_user_info` action.
+  2. Retrieve the user's account information from the response.
+  3. Present the account information to the user.
+- For any requests requiring authentication, include the `pairing_key` in the headers when calling backend actions.
+- If the pairing key is invalid or expired, inform the user and prompt them to log in again by restarting the authentication process.
+- Ensure the `pairing_key` is stored securely and used only for authenticated requests.
+
+```
+
+
 
 Certainly! To set up your Custom GPT with the specified authentication flow using ChatGPT's Custom GPTs feature, you'll need to carefully craft both the **system prompt** and **user instructions**. Additionally, you'll need to configure **actions** that interact with your Flask backend for authentication and data retrieval.
 
