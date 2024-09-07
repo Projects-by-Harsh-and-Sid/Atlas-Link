@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('/static/images/space2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+h1, h2 {
+    margin: 0;
+    font-size: 24px;
+}
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.rarity {
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.info-box {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.info-key {
+    text-transform: uppercase;
+    color: #999;
+}
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.submit-btn {
+    background-color: #4CAF50;
+    color: #fff;
+}
+.info-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.input-box {
+    width: 200px !important;
+}

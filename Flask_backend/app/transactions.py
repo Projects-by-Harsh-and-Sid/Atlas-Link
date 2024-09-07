@@ -61,13 +61,18 @@ def review_create_order(transaction_id):
     if request.method == 'POST':
         
         transaction_parameters = app.config["build_transactions"][transaction_id]
+        print (request.form)
         transaction_parameters['quantity'] = request.form.get('quantity')
         transaction_parameters['uiPrice'] = request.form.get('uiPrice')
+        print (transaction_parameters)
         
         try:
 
             redirect_url = url_for('perform_transaction', transaction_id=transaction_id)
-            redirect(redirect_url)
+            print (redirect_url)
+            # redirect(redirect_url)
+            
+            return redirect(redirect_url)
             
         except requests.RequestException as e:
             return jsonify({'error': str(e)}), 500
@@ -75,7 +80,7 @@ def review_create_order(transaction_id):
     
 
 @app.route('/perform_transaction/<transaction_id>', methods=['GET'])
-def index(transaction_id):
+def perform_transaction(transaction_id):
         
     if transaction_id not in app.config["build_transactions"]:
         return jsonify({'error': 'Invalid transaction code'}), 400    

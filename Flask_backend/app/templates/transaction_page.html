@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Transaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/transaction_page.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/transaction_page.js') }}"></script>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-header">
+            <h1>Review Transaction</h1>
+        </div>
+        <img src="{{ item_information.image }}" alt="{{ item_information.name }}" class="item-image">
+        <div class="item-info">
+            <h2>{{ item_information.name }}</h2>
+            <span class="rarity">{{ item_information.rarity }}</span>
+        </div>
+
+
+        <div class="info-box">
+            {% for key, value in item_information.items() %}
+                {% if key not in ['image', 'name', 'rarity','description','mint_id','make','model','tier','category'] %}
+                    <div class="info-row">
+                        <span class="info-key">{{ key }}</span>
+                        <span id="item-{{ key }}">{{ value }}</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        <form id="update-form">
+                <div class="info-box">
+                    <div class="info-flex">
+                        <label for="quantity">Quantity:</label>
+                        <input class="input-box" type="number" id="quantity" name="quantity" value="{{ transaction_parameters.quantity }}" required>
+                    </div>
+                    <div class="info-flex">
+                    <label for="uiPrice">UI Price:</label>
+                    <input class="input-box"type="number" id="uiPrice" name="uiPrice" step="0.01" value="{{ transaction_parameters.uiPrice }}" required>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button type="button" class="action-btn">Back</button>
+                <button type="button" class="action-btn">Cancel</button>
+                <button id="submit" type="submit" class="action-btn submit-btn">Submit Transaction</button>
+            </div>
+        </form>
+        </div>
+
+    </div>
+</body>
+</html>
