@@ -8,7 +8,16 @@ async function handleTransaction() {
     try {
         console.log("Initiating transaction...");
         // Step 1: Initiate the transaction
-        const response = await fetch('/initiate_transaction');
+        // const response = await fetch('/initiate_transaction');
+
+        // get url and extract transaction id like /url/transaction_id
+        const url = window.location.href;
+        const urlParts = url.split('/');
+        const transactionId = urlParts[urlParts.length - 1];
+        console.log("Transaction ID:", transactionId);
+
+        const response = await fetch('/initiate_transaction/'+transactionId);
+
         const data = await response.json();
 
         console.log("Received data:", data);
