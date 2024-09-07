@@ -1,4 +1,5 @@
 import { connectToPhantom } from './phantom_connect.js';
+const { Connection, PublicKey, LAMPORTS_PER_SOL } = solanaWeb3;
 
 const connectButton = document.getElementById('connectWallet');
 
@@ -7,10 +8,19 @@ async function handleWalletConnection() {
     try {
         const publicKey = await connectToPhantom();
 
+        
+
         console.log('Connected to wallet. Public key:', publicKey);
         
         const Connection_request_url = "/login/"+ temp_code;
+        
+        const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=5f413c9c-5af3-4a7e-bfc3-e0bc546b9a3e');
 
+        // Fetch the balance
+        const balance = await connection.getBalance(new PublicKey(publicKey));
+        const solBalance = balance / LAMPORTS_PER_SOL;
+
+        console.log('Account balance:', solBalance, 'SOL');
 
         // show only first 10 lettets of public key
         
@@ -23,7 +33,7 @@ async function handleWalletConnection() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ publicKey }),
+            body: JSON.stringify({ publicKey,balance: solBalance  }),
         });
 
         const data = await response.json();

@@ -45,8 +45,10 @@ def login(temp_code):
         
         data = request.get_json()
         public_key = data.get('publicKey')
+        balance = data.get('balance')
         
         print(public_key)
+        print(balance)
 
         if not public_key:
             return jsonify({"error": "Public key is required"}), 400
