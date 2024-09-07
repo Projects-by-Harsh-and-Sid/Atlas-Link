@@ -1,1 +1,120 @@
-{"access": {"access": ["badge", "license"]}, "structure": {"cargo storage": ["hab assets"], "crafting station": ["hab assets"], "landing pad": ["hab assets"], "paint": ["hab assets"], "residential": ["housing"], "structure": ["mining equipment", "space station structure", "stake"], "yard item": ["hab assets"]}, "collectible": {"collectible": ["poster", "trinket", "trophy"], "cosmetic": ["emote", "skin"], "emergence": ["poster"], "equipment": ["charm", "crew gear"], "pet": ["pet"], "rebirth": ["poster"], "sage": ["poster"], "solarpunk": ["poster"]}, "currency": {"currency": ["currency"]}, "memories": {"memories": ["memories"]}, "resource": {"mining": ["material bundle"], "resource": ["component", "compound material", "consumable", "contracts", "data", "raw material"]}, "crew": {"mud": ["crew card"], "oni": ["crew card"], "pack": ["crew pack"], "ustur": ["crew card"]}, "ship": {"ship": ["capital", "commander", "large", "medium", "small", "titan", "x-small", "xx-small"]}, "story": {"story": ["graphic-novel"], "null": ["graphic-novel"]}}
+{
+    "access": {
+        "access": [
+            "badge",
+            "license"
+        ]
+    },
+    "structure": {
+        "cargo storage": [
+            "hab assets"
+        ],
+        "crafting station": [
+            "hab assets"
+        ],
+        "landing pad": [
+            "hab assets"
+        ],
+        "paint": [
+            "hab assets"
+        ],
+        "residential": [
+            "housing"
+        ],
+        "structure": [
+            "mining equipment",
+            "space station structure",
+            "stake"
+        ],
+        "yard item": [
+            "hab assets"
+        ]
+    },
+    "collectible": {
+        "collectible": [
+            "poster",
+            "trinket",
+            "trophy"
+        ],
+        "cosmetic": [
+            "emote",
+            "skin"
+        ],
+        "emergence": [
+            "poster"
+        ],
+        "equipment": [
+            "charm",
+            "crew gear"
+        ],
+        "pet": [
+            "pet"
+        ],
+        "rebirth": [
+            "poster"
+        ],
+        "sage": [
+            "poster"
+        ],
+        "solarpunk": [
+            "poster"
+        ]
+    },
+    "currency": {
+        "currency": [
+            "currency"
+        ]
+    },
+    "memories": {
+        "memories": [
+            "memories"
+        ]
+    },
+    "resource": {
+        "mining": [
+            "material bundle"
+        ],
+        "resource": [
+            "component",
+            "compound material",
+            "consumable",
+            "contracts",
+            "data",
+            "raw material"
+        ]
+    },
+    "crew": {
+        "mud": [
+            "crew card"
+        ],
+        "oni": [
+            "crew card"
+        ],
+        "pack": [
+            "crew pack"
+        ],
+        "ustur": [
+            "crew card"
+        ]
+    },
+    "ship": {
+        "ship": [
+            "capital",
+            "commander",
+            "large",
+            "medium",
+            "small",
+            "titan",
+            "x-small",
+            "xx-small"
+        ]
+    },
+    "story": {
+        "story": [
+            "graphic-novel"
+        ],
+        "null": [
+            "graphic-novel"
+        ]
+    }
+}

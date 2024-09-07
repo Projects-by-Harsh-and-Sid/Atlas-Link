@@ -27,16 +27,15 @@ def fetch_star_atlas_data(account):
     return response.json()
 
 def format_player_data(data):
-    return {
-        "publicKey": data["publicKey"],
-        "avatarId": data["avatarId"],
-        "factionRank": data["factionRank"],
-        "rank": data["rank"],
-        "country": data["country"],
-        "registrationDate": data["registrationDate"],
-        "items": [],
-        "total_value_of_account": "0.000"  # Initialize with zero
-    }
+    
+    list_of_keys = ["publicKey", "avatarId", "factionRank", "rank", "country", "registrationDate"]
+    
+    data_final = {}
+    for key in list_of_keys:
+        if key in data:
+            data_final[key] = data[key]
+        
+    return data_final
 
 def process_player_items(data, reverse_map):
     items = []

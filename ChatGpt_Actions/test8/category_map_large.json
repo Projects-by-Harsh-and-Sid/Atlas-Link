@@ -1,1 +1,660 @@
-{"access": {"access": {"badge": {"anomaly": ["Executive Badge"], "common": ["Start Sequence Badge - Tier 0", "Start Sequence Badge - Tier 1", "Honeyland Explorer Badge"], "epic": ["Superior's Badge"], "legendary": ["Captain's Badge"], "rare": ["Start Sequence Badge - Tier 3", "Officer's Badge"], "uncommon": ["Start Sequence Badge - Tier 2", "Atlas Badge", "Unique Badge", "Principal's Badge", "Brew Badge"]}, "license": {"anomaly": ["Council Meta-PAS"], "epic": ["Faction Meta-PAS"], "legendary": ["VIP"]}}}, "structure": {"cargo storage": {"hab assets": {"common": ["Cargo Storage - Tier 0", "Cargo Storage - Tier 1"], "epic": ["Cargo Storage - Tier 5"], "rare": ["Cargo Storage - Tier 4"], "uncommon": ["Cargo Storage - Tier 2", "Cargo Storage - Tier 3"]}}, "crafting station": {"hab assets": {"common": ["Crafting Station - XXS"], "rare": ["Crafting Station - Medium"], "uncommon": ["Crafting Station - XS", "Crafting Station - Small"]}}, "landing pad": {"hab assets": {"common": ["Landing Pad - XXS"], "rare": ["Landing Pad - Medium"], "uncommon": ["Landing Pad - XS", "Landing Pad - Small"]}}, "paint": {"hab assets": {"uncommon": ["Exterior Paint (GAO Land Phase 1)", "Interior Paint (GAO Land Phase 1)", "Escape Velocity Exterior Paint"]}}, "residential": {"housing": {"anomaly": ["MUD CSS Tier 5", "ONI CSS Tier 5", "Ustur CSS Tier 5"], "common": ["ONI CSS Base Tier", "Ustur CSS Base Tier", "MUD CSS Base Tier"], "epic": ["MUD CSS Tier 3", "Ustur CSS Tier 3", "ONI CSS Tier 3"], "legendary": ["ONI CSS Tier 4", "Ustur CSS Tier 4", "MUD CSS Tier 4"], "rare": ["MUD CSS Tier 2", "ONI CSS Tier 2", "Ustur CSS Tier 2"], "uncommon": ["MUD CSS Tier 1", "ONI CSS Tier 1", "Ustur CSS Tier 1"]}}, "structure": {"mining equipment": {"common": ["Power Plant", "Mining Drill"]}, "space station structure": {"common": ["Space Station"]}, "stake": {"common": ["Claim Stake Tier 1"], "epic": ["Claim Stake Tier 4"], "legendary": ["Claim Stake Tier 5"], "rare": ["Claim Stake Tier 3"], "uncommon": ["Claim Stake Tier 2"]}}, "yard item": {"hab assets": {"uncommon": ["Pet House (GAO Land Phase 1)"]}}}, "collectible": {"collectible": {"poster": {"epic": ["Cosmic Thunder", "PCC #1", "PCC #2", "PCC #3"]}, "trinket": {"epic": ["Golden Ticket"]}, "trophy": {"rare": ["Joni Awards Trophy"]}}, "cosmetic": {"emote": {"epic": ["Peace Sign", "Squiddish", "To Infinity"], "rare": ["Ancient Dance", "Rolling Coal"]}, "skin": {"common": ["Suntiger"], "epic": ["Usturn", "White Hot", "Raydium Defy", "Nanobyte", "Sphinx", "Lone Star", "Streamcatcher", "Blue Tigu"], "legendary": ["Black Sun", "Black Sun"], "rare": ["Spacer", "B.O.B.", "RedX-IV", "Opportunity", "Dream", "Jupiter"], "uncommon": ["Puri PTP", "Puri PTT", "coins.ph"]}}, "emergence": {"poster": {"common": ["The Edge of Paradise"]}}, "equipment": {"charm": {"epic": ["Vintage Orbiting Satellite"]}, "crew gear": {"epic": ["PhotoniX Provenance", "COSMIC ORIGIN 92", "NXT le]V[el DS Bodysuit", "Cosmic Sounds"], "legendary": ["Noble Cloak", "Noble Signer", "Replicatur Shawl", "PRIMORDIAL GLO"], "rare": ["Vintage Astronaut Suit", "TTT 300K FTX", "Armstrong Patch", "TTT 300K SERUM", "TTT 300K Raydium", "TTT 300K ATLAS", "TTT 300K Phantom", "TTT 300K THE_FAB_RIC_ANT", "TTT 300K Animoca", "TTT 300K CryptoKickers", "TTT 300K SOLANA", "TTT 300K STEP.finance"]}}, "pet": {"pet": {"common": ["Tigu"]}}, "rebirth": {"poster": {"anomaly": ["Om Photoli", "Star Atlas"], "common": ["Discovery of Iris"], "epic": ["The Assassination of Paizul", "Paizul Funeral Procession", "Ahr Visits Earth"], "legendary": ["The Last Stand", "The Signing of the Peace Treaty", "The Peacebringers Archive", "Armstrong Forever"], "rare": ["Short Story of a Lost Astronaut", "B \u2764 P", "Ustur Wod.bod"], "uncommon": ["The Heart of Star Atlas", "The Convergence War"]}}, "sage": {"poster": {"uncommon": ["Escape Velocity"]}}, "solarpunk": {"poster": {"common": ["The First Coded Seeds Crop"], "epic": ["The Atmo-Harvester"], "legendary": ["The New Paradigm of Sustainability"], "rare": ["Perpetual Farming Lands"], "uncommon": ["Automated Plague Control"]}}}, "currency": {"currency": {"currency": {"common": ["Atlas", "Polis", "Tokes"]}}}, "memories": {"memories": {"memories": {"common": ["Memory Glimpse - Scraps and Spoils - NA Mission 1", "Memory Glimpse - The Search for Etira - NA Mission 2"], "rare": ["Memory Revelation - Scraps and Spoils - NA Mission 1", "Memory Revelation - The Search for Etira - NA Mission 2"], "uncommon": ["Memory Fragment - Scraps and Spoils - NA Mission 1", "Memory Fragment - The Search for Etira - NA Mission 2"]}}}, "resource": {"mining": {"material bundle": {"common": ["Power Plant Tier 2 Upgrade Bundle", "Mining Drill Tier 2 Upgrade Bundle"], "epic": ["Mining Drill Tier 5 Upgrade Bundle", "Power Plant Tier 5 Upgrade Bundle"], "rare": ["Mining Drill Tier 4 Upgrade Bundle", "Power Plant Tier 4 Upgrade Bundle"], "uncommon": ["Power Plant Tier 3 Upgrade Bundle", "Mining Drill Tier 3 Upgrade Bundle"]}}, "resource": {"component": {"common": ["Framework", "Energy Substrate", "Radiation Absorber", "Particle Accelerator", "Strange Emitter", "Super Conductor", "Electromagnet", "Power Source", "Field Stabilizer"]}, "compound material": {"common": ["Steel", "Crystal Lattice", "Magnet", "Electronics", "Polymer", "Copper Wire", "Hydrocarbon", "Iron", "Graphene", "Copper", "Aerogel", "Titanium"]}, "consumable": {"common": ["Ammunition", "Toolkit", "Food", "Fuel"]}, "contracts": {"common": ["Council RFR"]}, "data": {"common": ["Survey Data Unit"]}, "raw material": {"common": ["Rochinol", "Arco", "Diamond", "Copper Ore", "Carbon", "Iron Ore", "Biomass", "Hydrogen", "Lumanite", "Titanium Ore", "Nitrogen", "Silica"]}}}, "crew": {"mud": {"crew card": {"anomaly": ["Anna Tolle"], "common": ["Sigmund Nok"], "legendary": ["Sammy Banx"]}}, "oni": {"crew card": {"uncommon": ["Berpek Ula Eko"]}}, "pack": {"crew pack": {"gold": ["Gold 5 Card Pack", "Gold 1 Card Pack"], "platinum": ["Presale 10 Card Pack", "Platinum 1 Card Pack", "Platinum 5 Card Pack"], "silver": ["Silver 1 Card Pack", "Silver 5 Card Pack"]}}, "ustur": {"crew card": {"rare": ["Gagli.doer"]}}}, "ship": {"ship": {"capital": {"epic": ["VZUS ballad"], "legendary": ["Pearce C9", "Ogrika Jod Asteris", "Fimbul ECOS Bombarella", "Busan Maiden Heart", "Pearce D9", "Armstrong IMP", "Calico Guardian", "Fimbul Sledbarge"]}, "commander": {"anomaly": ["Fimbul ECOS Treearrow"], "legendary": ["Pearce C11", "Fimbul BYOS Tankship"]}, "large": {"epic": ["Pearce R8", "Rainbow Arc", "Opal Bitboat", "Ogrika Sunpaa", "Fimbul BYOS Butch", "Fimbul ECOS Greenader"], "legendary": ["Ogrika Thripid"]}, "medium": {"epic": ["Rainbow Om", "Ogrika Tursic", "Fimbul Mamba EX"], "rare": ["Armstrong IMP Tap", "VZUS opod", "Pearce F4", "Fimbul BYOS Packlite", "Calico Compakt Hero", "Fimbul BYOS Ranger"], "uncommon": ["Calico Evac", "Calico ATS Enforcer", "Fimbul Mamba"]}, "small": {"epic": ["Rainbow Chi", "Tufa Feist"], "rare": ["VZUS ambwe", "Pearce X6", "Fimbul BYOS Earp", "Ogrika Mik", "Busan Thrill of Life", "Opal Rayfam", "Calico Shipit"], "uncommon": ["Calico Medtech", "Pearce R6", "Armstrong IMP Tip"]}, "titan": {"anomaly": ["Pearce T1", "Busan The Last Stand mk. VIII", "Fimbul ECOS Superphoenix", "Rainbow Phi"]}, "x-small": {"common": ["Fimbul Lowbie", "Calico Scud"], "rare": ["Ogrika Niruch"], "uncommon": ["Calico Maxhog", "Pearce X5", "Opal Jetjet"]}, "xx-small": {"common": ["Pearce X4", "Fimbul Airbike", "VZUS solos", "Opal Jet", "Ogrika Ruch"], "epic": ["Fimbul ECOS Unibomba"]}}}, "story": {"story": {"graphic-novel": {"common": ["Core Act 2 - Episode 2 (Star Atlas)", "Core Act 2 - Episode 2 (Magic Eden)", "Core Act 2 - Episode 3 (Star Atlas)", "Core Act 2 - Episode 3 (Magic Eden)", "Core Act 2 - Episode 4 (Star Atlas)", "Core Act 2 - Episode 4 (Alternate Cover)", "Core Act 2 - Episode 5 (Star Atlas)", "Core Act 2 - Episode 5 (Alternate Cover)", "Core Act 2 - Episode 6 (Star Atlas)", "Core Act 2 - Episode 6 (Alternate Cover)"]}}, "null": {"graphic-novel": {"common": ["Core - Episode 1 (Star Atlas)", "Core - Episode 1 (Magic Eden)", "Core - Episode 2 (Magic Eden)", "Core - Episode 2 (Star Atlas)", "Core - Episode 3 (Magic Eden)", "Core - Episode 3 (Star Atlas)", "Core - Episode 4 (Star Atlas)", "Core - Episode 4 (Magic Eden)", "Core - Episode 5 (Magic Eden)", "Core - Episode 5 (Star Atlas)", "Core - Episode 6 (Magic Eden)", "Core - Episode 6 (Star Atlas)", "Core Act 2 - Episode 1 (Magic Eden)", "Core Act 2 - Episode 1 (Star Atlas)"]}}}}
+{
+    "access": {
+        "access": {
+            "badge": {
+                "anomaly": [
+                    "Executive Badge"
+                ],
+                "common": [
+                    "Start Sequence Badge - Tier 0",
+                    "Start Sequence Badge - Tier 1",
+                    "Honeyland Explorer Badge"
+                ],
+                "epic": [
+                    "Superior's Badge"
+                ],
+                "legendary": [
+                    "Captain's Badge"
+                ],
+                "rare": [
+                    "Start Sequence Badge - Tier 3",
+                    "Officer's Badge"
+                ],
+                "uncommon": [
+                    "Start Sequence Badge - Tier 2",
+                    "Atlas Badge",
+                    "Unique Badge",
+                    "Principal's Badge",
+                    "Brew Badge"
+                ]
+            },
+            "license": {
+                "anomaly": [
+                    "Council Meta-PAS"
+                ],
+                "epic": [
+                    "Faction Meta-PAS"
+                ],
+                "legendary": [
+                    "VIP"
+                ]
+            }
+        }
+    },
+    "structure": {
+        "cargo storage": {
+            "hab assets": {
+                "common": [
+                    "Cargo Storage - Tier 0",
+                    "Cargo Storage - Tier 1"
+                ],
+                "epic": [
+                    "Cargo Storage - Tier 5"
+                ],
+                "rare": [
+                    "Cargo Storage - Tier 4"
+                ],
+                "uncommon": [
+                    "Cargo Storage - Tier 2",
+                    "Cargo Storage - Tier 3"
+                ]
+            }
+        },
+        "crafting station": {
+            "hab assets": {
+                "common": [
+                    "Crafting Station - XXS"
+                ],
+                "rare": [
+                    "Crafting Station - Medium"
+                ],
+                "uncommon": [
+                    "Crafting Station - XS",
+                    "Crafting Station - Small"
+                ]
+            }
+        },
+        "landing pad": {
+            "hab assets": {
+                "common": [
+                    "Landing Pad - XXS"
+                ],
+                "rare": [
+                    "Landing Pad - Medium"
+                ],
+                "uncommon": [
+                    "Landing Pad - XS",
+                    "Landing Pad - Small"
+                ]
+            }
+        },
+        "paint": {
+            "hab assets": {
+                "uncommon": [
+                    "Exterior Paint (GAO Land Phase 1)",
+                    "Interior Paint (GAO Land Phase 1)",
+                    "Escape Velocity Exterior Paint"
+                ]
+            }
+        },
+        "residential": {
+            "housing": {
+                "anomaly": [
+                    "MUD CSS Tier 5",
+                    "ONI CSS Tier 5",
+                    "Ustur CSS Tier 5"
+                ],
+                "common": [
+                    "ONI CSS Base Tier",
+                    "Ustur CSS Base Tier",
+                    "MUD CSS Base Tier"
+                ],
+                "epic": [
+                    "MUD CSS Tier 3",
+                    "Ustur CSS Tier 3",
+                    "ONI CSS Tier 3"
+                ],
+                "legendary": [
+                    "ONI CSS Tier 4",
+                    "Ustur CSS Tier 4",
+                    "MUD CSS Tier 4"
+                ],
+                "rare": [
+                    "MUD CSS Tier 2",
+                    "ONI CSS Tier 2",
+                    "Ustur CSS Tier 2"
+                ],
+                "uncommon": [
+                    "MUD CSS Tier 1",
+                    "ONI CSS Tier 1",
+                    "Ustur CSS Tier 1"
+                ]
+            }
+        },
+        "structure": {
+            "mining equipment": {
+                "common": [
+                    "Power Plant",
+                    "Mining Drill"
+                ]
+            },
+            "space station structure": {
+                "common": [
+                    "Space Station"
+                ]
+            },
+            "stake": {
+                "common": [
+                    "Claim Stake Tier 1"
+                ],
+                "epic": [
+                    "Claim Stake Tier 4"
+                ],
+                "legendary": [
+                    "Claim Stake Tier 5"
+                ],
+                "rare": [
+                    "Claim Stake Tier 3"
+                ],
+                "uncommon": [
+                    "Claim Stake Tier 2"
+                ]
+            }
+        },
+        "yard item": {
+            "hab assets": {
+                "uncommon": [
+                    "Pet House (GAO Land Phase 1)"
+                ]
+            }
+        }
+    },
+    "collectible": {
+        "collectible": {
+            "poster": {
+                "epic": [
+                    "Cosmic Thunder",
+                    "PCC #1",
+                    "PCC #2",
+                    "PCC #3"
+                ]
+            },
+            "trinket": {
+                "epic": [
+                    "Golden Ticket"
+                ]
+            },
+            "trophy": {
+                "rare": [
+                    "Joni Awards Trophy"
+                ]
+            }
+        },
+        "cosmetic": {
+            "emote": {
+                "epic": [
+                    "Peace Sign",
+                    "Squiddish",
+                    "To Infinity"
+                ],
+                "rare": [
+                    "Ancient Dance",
+                    "Rolling Coal"
+                ]
+            },
+            "skin": {
+                "common": [
+                    "Suntiger"
+                ],
+                "epic": [
+                    "Usturn",
+                    "White Hot",
+                    "Raydium Defy",
+                    "Nanobyte",
+                    "Sphinx",
+                    "Lone Star",
+                    "Streamcatcher",
+                    "Blue Tigu"
+                ],
+                "legendary": [
+                    "Black Sun",
+                    "Black Sun"
+                ],
+                "rare": [
+                    "Spacer",
+                    "B.O.B.",
+                    "RedX-IV",
+                    "Opportunity",
+                    "Dream",
+                    "Jupiter"
+                ],
+                "uncommon": [
+                    "Puri PTP",
+                    "Puri PTT",
+                    "coins.ph"
+                ]
+            }
+        },
+        "emergence": {
+            "poster": {
+                "common": [
+                    "The Edge of Paradise"
+                ]
+            }
+        },
+        "equipment": {
+            "charm": {
+                "epic": [
+                    "Vintage Orbiting Satellite"
+                ]
+            },
+            "crew gear": {
+                "epic": [
+                    "PhotoniX Provenance",
+                    "COSMIC ORIGIN 92",
+                    "NXT le]V[el DS Bodysuit",
+                    "Cosmic Sounds"
+                ],
+                "legendary": [
+                    "Noble Cloak",
+                    "Noble Signer",
+                    "Replicatur Shawl",
+                    "PRIMORDIAL GLO"
+                ],
+                "rare": [
+                    "Vintage Astronaut Suit",
+                    "TTT 300K FTX",
+                    "Armstrong Patch",
+                    "TTT 300K SERUM",
+                    "TTT 300K Raydium",
+                    "TTT 300K ATLAS",
+                    "TTT 300K Phantom",
+                    "TTT 300K THE_FAB_RIC_ANT",
+                    "TTT 300K Animoca",
+                    "TTT 300K CryptoKickers",
+                    "TTT 300K SOLANA",
+                    "TTT 300K STEP.finance"
+                ]
+            }
+        },
+        "pet": {
+            "pet": {
+                "common": [
+                    "Tigu"
+                ]
+            }
+        },
+        "rebirth": {
+            "poster": {
+                "anomaly": [
+                    "Om Photoli",
+                    "Star Atlas"
+                ],
+                "common": [
+                    "Discovery of Iris"
+                ],
+                "epic": [
+                    "The Assassination of Paizul",
+                    "Paizul Funeral Procession",
+                    "Ahr Visits Earth"
+                ],
+                "legendary": [
+                    "The Last Stand",
+                    "The Signing of the Peace Treaty",
+                    "The Peacebringers Archive",
+                    "Armstrong Forever"
+                ],
+                "rare": [
+                    "Short Story of a Lost Astronaut",
+                    "B \u2764 P",
+                    "Ustur Wod.bod"
+                ],
+                "uncommon": [
+                    "The Heart of Star Atlas",
+                    "The Convergence War"
+                ]
+            }
+        },
+        "sage": {
+            "poster": {
+                "uncommon": [
+                    "Escape Velocity"
+                ]
+            }
+        },
+        "solarpunk": {
+            "poster": {
+                "common": [
+                    "The First Coded Seeds Crop"
+                ],
+                "epic": [
+                    "The Atmo-Harvester"
+                ],
+                "legendary": [
+                    "The New Paradigm of Sustainability"
+                ],
+                "rare": [
+                    "Perpetual Farming Lands"
+                ],
+                "uncommon": [
+                    "Automated Plague Control"
+                ]
+            }
+        }
+    },
+    "currency": {
+        "currency": {
+            "currency": {
+                "common": [
+                    "Atlas",
+                    "Polis",
+                    "Tokes"
+                ]
+            }
+        }
+    },
+    "memories": {
+        "memories": {
+            "memories": {
+                "common": [
+                    "Memory Glimpse - Scraps and Spoils - NA Mission 1",
+                    "Memory Glimpse - The Search for Etira - NA Mission 2"
+                ],
+                "rare": [
+                    "Memory Revelation - Scraps and Spoils - NA Mission 1",
+                    "Memory Revelation - The Search for Etira - NA Mission 2"
+                ],
+                "uncommon": [
+                    "Memory Fragment - Scraps and Spoils - NA Mission 1",
+                    "Memory Fragment - The Search for Etira - NA Mission 2"
+                ]
+            }
+        }
+    },
+    "resource": {
+        "mining": {
+            "material bundle": {
+                "common": [
+                    "Power Plant Tier 2 Upgrade Bundle",
+                    "Mining Drill Tier 2 Upgrade Bundle"
+                ],
+                "epic": [
+                    "Mining Drill Tier 5 Upgrade Bundle",
+                    "Power Plant Tier 5 Upgrade Bundle"
+                ],
+                "rare": [
+                    "Mining Drill Tier 4 Upgrade Bundle",
+                    "Power Plant Tier 4 Upgrade Bundle"
+                ],
+                "uncommon": [
+                    "Power Plant Tier 3 Upgrade Bundle",
+                    "Mining Drill Tier 3 Upgrade Bundle"
+                ]
+            }
+        },
+        "resource": {
+            "component": {
+                "common": [
+                    "Framework",
+                    "Energy Substrate",
+                    "Radiation Absorber",
+                    "Particle Accelerator",
+                    "Strange Emitter",
+                    "Super Conductor",
+                    "Electromagnet",
+                    "Power Source",
+                    "Field Stabilizer"
+                ]
+            },
+            "compound material": {
+                "common": [
+                    "Steel",
+                    "Crystal Lattice",
+                    "Magnet",
+                    "Electronics",
+                    "Polymer",
+                    "Copper Wire",
+                    "Hydrocarbon",
+                    "Iron",
+                    "Graphene",
+                    "Copper",
+                    "Aerogel",
+                    "Titanium"
+                ]
+            },
+            "consumable": {
+                "common": [
+                    "Ammunition",
+                    "Toolkit",
+                    "Food",
+                    "Fuel"
+                ]
+            },
+            "contracts": {
+                "common": [
+                    "Council RFR"
+                ]
+            },
+            "data": {
+                "common": [
+                    "Survey Data Unit"
+                ]
+            },
+            "raw material": {
+                "common": [
+                    "Rochinol",
+                    "Arco",
+                    "Diamond",
+                    "Copper Ore",
+                    "Carbon",
+                    "Iron Ore",
+                    "Biomass",
+                    "Hydrogen",
+                    "Lumanite",
+                    "Titanium Ore",
+                    "Nitrogen",
+                    "Silica"
+                ]
+            }
+        }
+    },
+    "crew": {
+        "mud": {
+            "crew card": {
+                "anomaly": [
+                    "Anna Tolle"
+                ],
+                "common": [
+                    "Sigmund Nok"
+                ],
+                "legendary": [
+                    "Sammy Banx"
+                ]
+            }
+        },
+        "oni": {
+            "crew card": {
+                "uncommon": [
+                    "Berpek Ula Eko"
+                ]
+            }
+        },
+        "pack": {
+            "crew pack": {
+                "gold": [
+                    "Gold 5 Card Pack",
+                    "Gold 1 Card Pack"
+                ],
+                "platinum": [
+                    "Presale 10 Card Pack",
+                    "Platinum 1 Card Pack",
+                    "Platinum 5 Card Pack"
+                ],
+                "silver": [
+                    "Silver 1 Card Pack",
+                    "Silver 5 Card Pack"
+                ]
+            }
+        },
+        "ustur": {
+            "crew card": {
+                "rare": [
+                    "Gagli.doer"
+                ]
+            }
+        }
+    },
+    "ship": {
+        "ship": {
+            "capital": {
+                "epic": [
+                    "VZUS ballad"
+                ],
+                "legendary": [
+                    "Pearce C9",
+                    "Ogrika Jod Asteris",
+                    "Fimbul ECOS Bombarella",
+                    "Busan Maiden Heart",
+                    "Pearce D9",
+                    "Armstrong IMP",
+                    "Calico Guardian",
+                    "Fimbul Sledbarge"
+                ]
+            },
+            "commander": {
+                "anomaly": [
+                    "Fimbul ECOS Treearrow"
+                ],
+                "legendary": [
+                    "Pearce C11",
+                    "Fimbul BYOS Tankship"
+                ]
+            },
+            "large": {
+                "epic": [
+                    "Pearce R8",
+                    "Rainbow Arc",
+                    "Opal Bitboat",
+                    "Ogrika Sunpaa",
+                    "Fimbul BYOS Butch",
+                    "Fimbul ECOS Greenader"
+                ],
+                "legendary": [
+                    "Ogrika Thripid"
+                ]
+            },
+            "medium": {
+                "epic": [
+                    "Rainbow Om",
+                    "Ogrika Tursic",
+                    "Fimbul Mamba EX"
+                ],
+                "rare": [
+                    "Armstrong IMP Tap",
+                    "VZUS opod",
+                    "Pearce F4",
+                    "Fimbul BYOS Packlite",
+                    "Calico Compakt Hero",
+                    "Fimbul BYOS Ranger"
+                ],
+                "uncommon": [
+                    "Calico Evac",
+                    "Calico ATS Enforcer",
+                    "Fimbul Mamba"
+                ]
+            },
+            "small": {
+                "epic": [
+                    "Rainbow Chi",
+                    "Tufa Feist"
+                ],
+                "rare": [
+                    "VZUS ambwe",
+                    "Pearce X6",
+                    "Fimbul BYOS Earp",
+                    "Ogrika Mik",
+                    "Busan Thrill of Life",
+                    "Opal Rayfam",
+                    "Calico Shipit"
+                ],
+                "uncommon": [
+                    "Calico Medtech",
+                    "Pearce R6",
+                    "Armstrong IMP Tip"
+                ]
+            },
+            "titan": {
+                "anomaly": [
+                    "Pearce T1",
+                    "Busan The Last Stand mk. VIII",
+                    "Fimbul ECOS Superphoenix",
+                    "Rainbow Phi"
+                ]
+            },
+            "x-small": {
+                "common": [
+                    "Fimbul Lowbie",
+                    "Calico Scud"
+                ],
+                "rare": [
+                    "Ogrika Niruch"
+                ],
+                "uncommon": [
+                    "Calico Maxhog",
+                    "Pearce X5",
+                    "Opal Jetjet"
+                ]
+            },
+            "xx-small": {
+                "common": [
+                    "Pearce X4",
+                    "Fimbul Airbike",
+                    "VZUS solos",
+                    "Opal Jet",
+                    "Ogrika Ruch"
+                ],
+                "epic": [
+                    "Fimbul ECOS Unibomba"
+                ]
+            }
+        }
+    },
+    "story": {
+        "story": {
+            "graphic-novel": {
+                "common": [
+                    "Core Act 2 - Episode 2 (Star Atlas)",
+                    "Core Act 2 - Episode 2 (Magic Eden)",
+                    "Core Act 2 - Episode 3 (Star Atlas)",
+                    "Core Act 2 - Episode 3 (Magic Eden)",
+                    "Core Act 2 - Episode 4 (Star Atlas)",
+                    "Core Act 2 - Episode 4 (Alternate Cover)",
+                    "Core Act 2 - Episode 5 (Star Atlas)",
+                    "Core Act 2 - Episode 5 (Alternate Cover)",
+                    "Core Act 2 - Episode 6 (Star Atlas)",
+                    "Core Act 2 - Episode 6 (Alternate Cover)"
+                ]
+            }
+        },
+        "null": {
+            "graphic-novel": {
+                "common": [
+                    "Core - Episode 1 (Star Atlas)",
+                    "Core - Episode 1 (Magic Eden)",
+                    "Core - Episode 2 (Magic Eden)",
+                    "Core - Episode 2 (Star Atlas)",
+                    "Core - Episode 3 (Magic Eden)",
+                    "Core - Episode 3 (Star Atlas)",
+                    "Core - Episode 4 (Star Atlas)",
+                    "Core - Episode 4 (Magic Eden)",
+                    "Core - Episode 5 (Magic Eden)",
+                    "Core - Episode 5 (Star Atlas)",
+                    "Core - Episode 6 (Magic Eden)",
+                    "Core - Episode 6 (Star Atlas)",
+                    "Core Act 2 - Episode 1 (Magic Eden)",
+                    "Core Act 2 - Episode 1 (Star Atlas)"
+                ]
+            }
+        }
+    }
+}
