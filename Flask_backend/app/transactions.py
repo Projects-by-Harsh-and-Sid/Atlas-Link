@@ -4,7 +4,7 @@ from app import app
 
 import uuid
 
-from app.data_routes import extract_account
+from app.helper_functions.open_ai_request_mapper import extract_account
 
 EXPRESS_SERVER_URL = 'http://localhost:3000'
 

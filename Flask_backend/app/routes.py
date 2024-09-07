@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from app import app
+from app.helper_functions.open_ai_request_mapper import extract_account
 
 import uuid
 
@@ -33,27 +34,6 @@ def get_login():
     return jsonify({"login_url": login_url, "pairing_key": pairing_key})
     
 
-# @app.route('/login/<temp_code>', methods=['POST', 'GET'])
-# def login(temp_code):
-#     if request.method == 'GET':
-#         # Render the login form when the page is visited
-#         return render_template('login.html', temp_code=temp_code)
-    
-#     if request.method == 'POST':
-#         # Handle form submission
-#         username = request.form.get('username')  # Get username from form
-
-#         if temp_code in temp_codes:
-#             # Assume successful login, associate pairing key with user ID
-#             pairing_key = temp_codes[temp_code]
-#             user_id = username  # In practice, map this to a real user ID
-
-#             # Store the mapping of pairing_key to user ID
-#             user_sessions[pairing_key] = user_id
-
-#             return jsonify({"message": f"User {username} logged in successfully!"})
-
-#     return jsonify({"error": "Invalid or expired temp code"}), 400
 
 
 @app.route('/login/<temp_code>', methods=['POST', 'GET'])
@@ -92,22 +72,6 @@ def login(temp_code):
     
 
 
-
-# Route to get user information based on pairing key
-@app.route('/get_user_info', methods=['GET'])
-def get_user_info():
-    pairing_key = str(request.headers.get("Openai-Conversation-Id"))
-
-    if pairing_key in app.config["user_pairs"]:
-        user_id = app.config["user_pairs"][pairing_key]
-        # Simulate fetching user info
-        user_info = {
-            "user_id": user_id,
-            "account_info": "Some account-related info here."
-        }
-        return jsonify(user_info)
-    
-    return jsonify({"error": "Invalid or missing pairing key"}), 401
 
 
 
