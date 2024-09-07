@@ -60,10 +60,10 @@ def login(temp_code):
         # Here you might want to add logic to handle the public key
         
         pairing_key = temp_codes[temp_code]
-        user_id = public_key  # In practice, map this to a real user ID
 
         # Store the mapping of pairing_key to user ID
-        app.config["user_pairs"][pairing_key] = user_id
+        app.config["user_pairs"][pairing_key] = public_key
+        app.config["balance"][public_key] = balance
         
         # For example, storing it in a database or associating it with a user
 

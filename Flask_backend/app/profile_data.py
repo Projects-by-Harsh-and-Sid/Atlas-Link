@@ -39,6 +39,10 @@ def player_details(account):
         data = fetch_star_atlas_data(str(account))
         formatted_data = format_player_data(data)
         formatted_data["items"] = process_player_items(data, app.config["reverse_map"])
+        if account in app.config["balance"]:
+            formatted_data["USDC balance"] = app.config["balance"][account]
+        else:
+            formatted_data["USDC balance"] = 0
         return jsonify(formatted_data), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500

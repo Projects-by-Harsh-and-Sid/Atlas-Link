@@ -16,7 +16,7 @@ app.config["Item_data"] = json.load(open(r'resources\detial_items.json'))
 app.config["reverse_map"] = json.load(open(r'resources\reverse_map.json'))
 app.config["user_pairs"] = {"abc123": "6Senu4mrPDM1Mb1xJYFXSDg2CggWkFLC9VCNzp1LEHBX",
                             "abc1234": "Ad8yNpE3seJKHoNstbDHjG5F5ZCapapuxtpKKMWPGML5"}
-
+app.config["balance"] = {'6Senu4mrPDM1Mb1xJYFXSDg2CggWkFLC9VCNzp1LEHBX': 100}
 
 TRANSACTION_PARAMS = {
     'orderCreator': '6Senu4mrPDM1Mb1xJYFXSDg2CggWkFLC9VCNzp1LEHBX',
