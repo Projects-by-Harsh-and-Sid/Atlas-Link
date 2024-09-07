@@ -1,4 +1,5 @@
 from flask import Flask
+from app.instructions.generate_instructions import get_instruction_dictionary
 
 import yaml
 import json
@@ -13,7 +14,8 @@ app.config["Atlas_data"] = info['atlas_data']
 
 app.config["Item_data"] = json.load(open(r'resources\detial_items.json'))
 app.config["reverse_map"] = json.load(open(r'resources\reverse_map.json'))
-app.config["user_pairs"] = {"abc123": "6Senu4mrPDM1Mb1xJYFXSDg2CggWkFLC9VCNzp1LEHBX"}
+app.config["user_pairs"] = {"abc123": "6Senu4mrPDM1Mb1xJYFXSDg2CggWkFLC9VCNzp1LEHBX",
+                            "abc1234": "Ad8yNpE3seJKHoNstbDHjG5F5ZCapapuxtpKKMWPGML5"}
 
 
 TRANSACTION_PARAMS = {
@@ -28,6 +30,8 @@ TRANSACTION_PARAMS = {
 
 
 app.config["build_transactions"] = { "abc": TRANSACTION_PARAMS }
+app.config['instructions'] = get_instruction_dictionary()
+
 
 
 from app import (routes, 
@@ -36,3 +40,5 @@ from app import (routes,
                  transactions, 
                  profile_data, 
                  item_data)
+
+from app.instructions import instructions

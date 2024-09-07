@@ -38,6 +38,10 @@ def get_login():
 
 @app.route('/login/<temp_code>', methods=['POST', 'GET'])
 def login(temp_code):
+    
+    
+    if temp_code not in temp_codes:
+        return jsonify({"error": "Invalid temp code"}), 400
 
     try:
         if request.method == 'GET':

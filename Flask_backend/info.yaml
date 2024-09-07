@@ -1,3 +1,6 @@
 ngrok_url : https://composed-early-tadpole.ngrok-free.app/
 
 atlas_data : http://localhost:3000/
+
+endpoint_data1 : https://composed-early-tadpole.ngrok-free.app//openapi_endpoints/actions.yaml
+
