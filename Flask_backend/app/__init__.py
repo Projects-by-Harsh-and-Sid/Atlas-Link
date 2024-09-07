@@ -30,7 +30,9 @@ TRANSACTION_PARAMS = {
 app.config["build_transactions"] = { "abc": TRANSACTION_PARAMS }
 
 
-from app import routes
-from app import data_routes
-from app import order_book
-from app import transactions
+from app import (routes, 
+                 data_routes, 
+                 order_book, 
+                 transactions, 
+                 profile_data, 
+                 item_data)
