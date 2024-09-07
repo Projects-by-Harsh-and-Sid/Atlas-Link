@@ -41,7 +41,9 @@
             </div>
             <div class="action-buttons">
                 <button type="button" class="action-btn">Cancel</button>
-                <button id="submit" type="submit" class="action-btn submit-btn">Submit Transaction</button>
+                <button id="submit" type="submit" class="action-btn submit-btn {% if transaction_parameters.orderSide == 'sell' %}submit-btn-sell{% else %}submit-btn-buy{% endif %}">
+                    Submit {{ 'Sell' if transaction_parameters.orderSide == 'sell' else 'Buy' }} Transaction
+                </button>
             </div>
         </form>
         </div>

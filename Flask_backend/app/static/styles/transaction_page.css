@@ -118,9 +118,13 @@ label {
     cursor: pointer;
     font-weight: bold;
 }
-.submit-btn {
-    background-color: #4CAF50;
-    color: #fff;
+.submit-btn-buy {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.submit-btn-sell {
+    background-color: #f44336; /* Red */
+    color: white;
 }
 .info-flex {
     display: flex;
