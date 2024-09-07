@@ -22,9 +22,3 @@ def get_instruction_dictionary():
     return instructions
 
 
-# │   ├── navigation.md
-# │   ├── data_presentation.md
-# │   ├── authentication.md
-# │   ├── marketplace_order_data.md
-# │   ├── player_inventory_profile.md
-# │   └── generate_instructions.py

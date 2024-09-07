@@ -18,31 +18,32 @@ TRANSACTION_PARAMS = {
     'programId': 'traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg',
     'orderSide': 'sell'
 }
-@app.route('/create_order/<transaction_type>/<mint_id>/', methods=['GET'])
+@app.route('/create_order/<transaction_type>/<mint_id>', methods=['GET'])
 @extract_account
 def create_order(account,transaction_type, mint_id):
     
+    print (account,transaction_type, mint_id)
+    
     if transaction_type not in ('buy','sell'):
         return jsonify({'error': 'Invalid transaction type'}), 400
-        
-    
+            
     temp_code = str(uuid.uuid4())
     
     transaction_paramaerter = {
         "orderCreator": account,
         "itemMint": mint_id,
-        'quoteMint': 'ATLASXmbPQxBUYbxPsV97usA3fPQYEqzQBUHgiFCUsXx',
+        'quoteMint': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
         "orderSide": transaction_type,
         'programId': 'traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg',
-        "quantity": "__get_from_request__",
-        "uiPrice": "__get_from_request__"
+        "quantity": "null",
+        "uiPrice": "null"
         
     }
     
     app.config["build_transactions"][temp_code] = transaction_paramaerter
     
-    login_url = f"{app.config['URL']}/review_create_order/{temp_code}"
-    return jsonify({"login_url": login_url, "transaction_code": temp_code})
+    transaction_url = f"{app.config['URL']}/review_create_order/{temp_code}"
+    return jsonify({"transaction_code": temp_code, "transaction_url": transaction_url })
 
 @app.route('/review_create_order/<transaction_id>', methods=['GET', 'POST'])
 def review_create_order(transaction_id):
