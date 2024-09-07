@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Initiate Transaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/transaction_items.css') }}">
 </head>
 <body>
-    <h1>Star Atlas Transaction</h1>
-    <button id="initiateTransaction">Initiate Transaction</button>
+    <div class="container">
+        <h1>Confirm Transaction</h1>
+        <button id="initiateTransaction">Confirm</button>
+    </div>
 
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script type="module" src="{{ url_for('static', filename='js/transaction_items.js') }}"></script>
