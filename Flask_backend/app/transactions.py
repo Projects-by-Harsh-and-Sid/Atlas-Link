@@ -55,7 +55,7 @@ def review_create_order(transaction_id):
         transaction_parameters = app.config["build_transactions"][transaction_id]
         # also find item meta data to display using the item_data_mint_id_map
         item_information = app.config["reverse_map"][transaction_parameters['itemMint']] 
-        return render_template('transaction_.html', transaction_parameters=transaction_parameters, item_information= item_information)
+        return render_template('transaction_page.html', transaction_parameters=transaction_parameters, item_information= item_information)
     
     
     if request.method == 'POST':
