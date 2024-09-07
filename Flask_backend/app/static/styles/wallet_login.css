@@ -31,31 +31,97 @@ body {
     position: relative;
     min-height: 400px;
     min-width: 400px;
+    animation: pulse 2s infinite;
 }
 
 h1 {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .image-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
 }
-
-.logo-image {
-    max-width: 50px;
-    max-height: 50px;
-    object-fit: contain;
-
+.logo-image-gpt {
+    width: 60px;
+    height: 60px;
+    transition: all 0.5s ease-in-out;
 }
-
+.logo-image-atlas {
+    width: 60px;
+    height: 60px;
+    transition: all 0.5s ease-in-out;
+}
 .separator {
-    margin: 0 10px;
     font-size: 24px;
-    font-weight: bold;
+    margin: 0 20px;
+    transition: all 0.5s ease-in-out;
+}
+.tick-mark {
+    display: none;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+}
+.merged .logo-image-atlas {
+    transform: translateX(60px);
+}
+.merged .logo-image-gpt {
+    transform: translateX(-52px);
+}
+.merged .separator {
+    opacity: 0;
+}
+.merged .tick-mark {
+    display: block;
+    animation: showTick 0.5s 0.5s forwards;
+}
+
+.hidden .logo-image-atlas,
+.hidden .logo-image-gpt,
+.hidden .separator {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#tick-svg {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: none;
+}
+.tick {
+    transform-origin: center;
+    animation: grow 0.8s ease-in-out forwards;
+}
+.circle {
+    transform-origin: center;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: dash 1s linear;
+}
+@keyframes grow {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 button#connectWallet {
@@ -67,6 +133,7 @@ button#connectWallet {
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    margin-top: 100px;
 }
 
 button#connectWallet:hover {
@@ -92,3 +159,85 @@ button#connectWallet:active {
         font-size: 20px;
     }
 }
+
+
+/* Snackbar styles */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        .connection-message {
+            font-family: 'Orbitron', sans-serif;
+            /* background-color: rgba(10, 10, 25, 0.8); */
+            color: #ffffff;
+            /* border: 2px solid #00ffff; */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            margin-top: 0px;
+            max-width: 400px;
+            text-align: center;
+            /* box-shadow: 0 0 15px #00ffff;
+            animation: pulse 2s infinite; */
+        }
+
+        .connection-message h2 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        /* @keyframes pulse {
+            0% { box-shadow: 0 0 15px #00ffff; }
+            50% { box-shadow: 0 0 30px #00ffff; }
+            100% { box-shadow: 0 0 15px #00ffff; }
+        } */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px #ffffff; }
+            50% { box-shadow: 0 0 30px #ffffff; }
+            100% { box-shadow: 0 0 15px #ffffff; }
+        }

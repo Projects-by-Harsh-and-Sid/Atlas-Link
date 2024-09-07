@@ -20,6 +20,9 @@ async function handleWalletConnection() {
         if (response.ok) {
             console.log('Server response:', data);
             // Here you might want to redirect the user or update the UI
+            triggerMergeAnimation();
+
+            showSnackbar();
         } else {
             throw new Error(data.error || 'Failed to send public key to server');
         }
@@ -29,6 +32,23 @@ async function handleWalletConnection() {
         alert(`Error: ${error.message}`);
     }
 }
+
+function showSnackbar() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function triggerMergeAnimation() {
+    const container = document.querySelector('.image-container');
+    container.classList.add('merged');
+
+    setTimeout(() => {
+        container.classList.add('hidden');
+        document.getElementById('tick-svg').style.display = 'block';
+    }, 1000); // Adjust timing as needed (1000ms = 1s)
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const connectButton = document.getElementById('connectWallet');

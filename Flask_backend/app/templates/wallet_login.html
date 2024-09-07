@@ -9,18 +9,36 @@
 <body>
     <div class="overlay"></div>
     <div class="container">
-        <h1>Atlas Link</h1>
-        
-        <div class="image-container">
-            <img src="{{ url_for('static', filename='images/atlas.png') }}" alt="Image 1" class="logo-image">
-            <span class="separator">x</span>
-            <img src="{{ url_for('static', filename='images/gpt.svg') }}" alt="Image 2" class="logo-image">
+        <div class="connection-message">
+            <h2>🌌 Atlas Link 🚀</h2>
+            <p>
+                Greetings, space explorer! Your neural pathways have successfully interfaced with the 
+                <span class="highlight">Star Atlas market matrix</span>. Through the power of ChatGPT, 
+                you now have direct access to the vast cosmic marketplace. Prepare for an unprecedented 
+                journey through digital constellations and AI-powered trade routes. 
+                Your adventure in the <span class="highlight">fusion of blockchain and artificial intelligence</span> 
+                begins now. Welcome to the future of interstellar commerce!
+            </p>
         </div>
         
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/atlas.svg') }}" alt="Atlas Logo" class="logo-image-atlas">
+            <span class="separator">x</span>
+            <img src="{{ url_for('static', filename='images/gpt.svg') }}" alt="GPT Logo" class="logo-image-gpt">
+            <svg id="tick-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+                <g transform="translate(100,100) scale(0.3)">
+                <path class="circle" stroke="#1C9943" stroke-width="10" fill="#fff" fill-opacity="0" stroke-miterlimit="10" d="M150,47.9c18.4,0,35.4,4.6,51,13.8s28,21.6,37.2,37.2s13.8,32.6,13.8,51s-4.6,35.4-13.8,51s-21.6,28-37.2,37.2s-32.6,13.8-51,13.8s-35.4-4.6-51-13.8s-28-21.6-37.2-37.2s-13.8-32.6-13.8-51s4.6-35.4,13.8-51s21.6-28,37.2-37.2S131.7,47.9,150,47.9z M150,238.7c16.2,0,31-4,"/>
+                <path class="tick" cx="0" cy="0" r="1" opacity="1" fill="#1C9943" stroke="" stroke-width="10" d="M208.4,118.6c0.8-0.8,1.2-1.9,1.2-3.3c0-1.4-0.4-2.6-1.2-3.7l-3.7-3.3c-0.8-1.1-1.9-1.6-3.3-1.6s-2.6,0.4-3.7,1.2l-67,67l-28.4-28.8c-1.1-0.8-2.3-1.2-3.7-1.2c-1.4,0-2.5,0.4-3.3,1.2l-3.7,3.3c-0.8,1.1-1.2,2.3-1.2,3.7s0.4,2.5,1.2,3.3l35.4,35.8c1.1,1.1,2.3,1.6,3.7,1.6c1.4,0,2.5-0.5,3.3-1.6L208.4,118.6z"/>
+                    </g>
+            </svg>
+
+        </div>
         <button id="connectWallet">Connect to Wallet</button>
+        <div id="snackbar">Successfully connected.Go to ChatGPT</div>
     </div>
     <script> 
-        const temp_code = "{{temp_code}}" 
+        const temp_code = "{{temp_code}}";
+
     </script>
     <script type="module" src="{{url_for('static', filename='js/login.js')}}"></script>
 </body>
