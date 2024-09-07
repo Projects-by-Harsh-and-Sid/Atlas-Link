@@ -12,11 +12,12 @@ body {
     align-items: center;
 }
 .modal {
-    background-color: #2a2a2a;
+    background-color:rgb(33, 34, 35);
     border-radius: 10px;
     padding: 20px;
     width: 400px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: pulse 2s infinite;
 }
 .modal-header {
     display: flex;
@@ -34,6 +35,8 @@ body {
 h1, h2 {
     margin: 0;
     font-size: 24px;
+    color: #ffffff;
+    font-family: system-ui, sans-serif;
 }
 .item-image {
     width: 100%;
@@ -54,6 +57,8 @@ h1, h2 {
     border-radius: 15px;
     font-size: 12px;
     text-transform: uppercase;
+    animation: pulse2 2s infinite;
+    color: #ffffff;
 }
 .info-box {
     background-color: #333;
@@ -68,10 +73,27 @@ h1, h2 {
     border-bottom: 1px solid #444;
 }
 
+
 .info-key {
     text-transform: uppercase;
-    color: #999;
+    color: #fff;
+    font-family: system-ui, sans-serif;
 }
+
+.info-value {
+    color: #fff;
+    font-family: system-ui, sans-serif;
+}
+
+.quantity{
+    color: #fff;
+    font-family: system-ui, sans-serif;
+}
+
+.price {
+    color: #fff;
+    font-family: system-ui, sans-serif;
+}   
 input[type="number"] {
     width: calc(100% - 20px);
     padding: 10px;
@@ -108,4 +130,24 @@ label {
 }
 .input-box {
     width: 200px !important;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px #ffffff; }
+    50% { box-shadow: 0 0 30px #ffffff; }
+    100% { box-shadow: 0 0 15px #ffffff; }
+}
+@keyframes pulse2 {
+    0% { 
+        box-shadow: 0 0 5px rgba(193, 53, 132, 0.2),
+                    0 0 10px rgba(225, 48, 108, 0.2);
+    }
+    50% { 
+        box-shadow: 0 0 10px rgba(193, 53, 132, 0.3),
+                    0 0 20px rgba(225, 48, 108, 0.3);
+    }
+    100% { 
+        box-shadow: 0 0 5px rgba(193, 53, 132, 0.2),
+                    0 0 10px rgba(225, 48, 108, 0.2);
+    }
 }

@@ -1,11 +1,22 @@
 import { connectToPhantom } from './phantom_connect.js';
 
+const connectButton = document.getElementById('connectWallet');
+
+
 async function handleWalletConnection() {
     try {
         const publicKey = await connectToPhantom();
+
         console.log('Connected to wallet. Public key:', publicKey);
         
         const Connection_request_url = "/login/"+ temp_code;
+
+
+        // show only first 10 lettets of public key
+        
+        connectButton.textContent = String(publicKey).substring(0, 10) + '...';
+
+        connectButton.classList.add('connected');
 
         const response = await fetch(Connection_request_url, {
             method: 'POST',

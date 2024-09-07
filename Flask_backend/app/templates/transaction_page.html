@@ -24,23 +24,22 @@
                 {% if key not in ['image', 'name', 'rarity','description','mint_id','make','model','tier','category'] %}
                     <div class="info-row">
                         <span class="info-key">{{ key }}</span>
-                        <span id="item-{{ key }}">{{ value }}</span>
+                        <span class="info-value" id="item-{{ key }}">{{ value }}</span>
                     </div>
                 {% endif %}
             {% endfor %}
         <form id="update-form">
                 <div class="info-box">
                     <div class="info-flex">
-                        <label for="quantity">Quantity:</label>
+                        <label class="quantity" for="quantity">Quantity:</label>
                         <input class="input-box" type="number" id="quantity" name="quantity" value="{{ transaction_parameters.quantity }}" required>
                     </div>
                     <div class="info-flex">
-                    <label for="uiPrice">UI Price:</label>
+                    <label class = "price" for="uiPrice">UI Price:</label>
                     <input class="input-box"type="number" id="uiPrice" name="uiPrice" step="0.01" value="{{ transaction_parameters.uiPrice }}" required>
                 </div>
             </div>
             <div class="action-buttons">
-                <button type="button" class="action-btn">Back</button>
                 <button type="button" class="action-btn">Cancel</button>
                 <button id="submit" type="submit" class="action-btn submit-btn">Submit Transaction</button>
             </div>
