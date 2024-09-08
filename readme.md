@@ -6,6 +6,15 @@
 
 This document presents a detailed overview of Atlas Link, an advanced AI-powered assistant designed to revolutionize user interaction with the Star Atlas game marketplace. Leveraging the capabilities of ChatGPT and integrating with blockchain technologies, Atlas Link offers unprecedented access to on-chain data, market analytics, and personalized DeFi services within the Star Atlas ecosystem.
 
+
+Project Summary Link: 
+[Atlas Link Docs](https://docs.google.com/document/d/1llFgBs-1YpxqEUhkvJRpCsnFP0G007Dp_20XHjWDB9s/edit#heading=h.isv578hufhmm)
+
+Project Demo Link:
+[Atlas Link: Gateway to AI-Powered Interstellar Commerce](https://www.youtube.com/watch?v=LW9toyjEZaU)
+
+
+
 ---
 
 ## Table of Contents
