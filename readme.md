@@ -1,10 +1,10 @@
-# Star Link: Advanced DeFi Assistant for Star Atlas Marketplace
+# Atlas Link: Advanced DeFi Assistant for Star Atlas Marketplace
 
 ## A Comprehensive Documentation of an AI-Powered DeFi Tool for Data Presentation and Visualization in the Star Atlas Ecosystem
 
 ### Abstract
 
-This document presents a detailed overview of Star Link, an advanced AI-powered assistant designed to revolutionize user interaction with the Star Atlas game marketplace. Leveraging the capabilities of ChatGPT and integrating with blockchain technologies, Star Link offers unprecedented access to on-chain data, market analytics, and personalized DeFi services within the Star Atlas ecosystem.
+This document presents a detailed overview of Atlas Link, an advanced AI-powered assistant designed to revolutionize user interaction with the Star Atlas game marketplace. Leveraging the capabilities of ChatGPT and integrating with blockchain technologies, Atlas Link offers unprecedented access to on-chain data, market analytics, and personalized DeFi services within the Star Atlas ecosystem.
 
 ---
 
@@ -28,11 +28,11 @@ This document presents a detailed overview of Star Link, an advanced AI-powered 
 
 ## 1. Introduction
 
-Star Link represents a significant advancement in the integration of artificial intelligence with decentralized finance (DeFi) and gaming ecosystems. Built as a custom GPT model on the ChatGPT platform, Star Link serves as an intelligent interface between users and the complex world of the Star Atlas marketplace. This documentation provides a comprehensive overview of Star Link's capabilities, architecture, and potential applications in the realm of DeFi and blockchain-based gaming.
+Atlas Link represents a significant advancement in the integration of artificial intelligence with decentralized finance (DeFi) and gaming ecosystems. Built as a custom GPT model on the ChatGPT platform, Atlas Link serves as an intelligent interface between users and the complex world of the Star Atlas marketplace. This documentation provides a comprehensive overview of Atlas Link's capabilities, architecture, and potential applications in the realm of DeFi and blockchain-based gaming.
 
 ### 1.1 Purpose and Scope
 
-Star Link is designed to:
+Atlas Link is designed to:
 - Facilitate seamless navigation of the Star Atlas marketplace
 - Provide real-time, on-chain data analysis and visualization
 - Offer personalized DeFi services within the Star Atlas ecosystem
@@ -49,7 +49,7 @@ Star Link is designed to:
 
 ## 2. System Architecture
 
-Star Link's architecture is a sophisticated blend of AI, blockchain technology, and traditional web services, designed to provide a seamless and intelligent interface for Star Atlas marketplace interactions.
+Atlas Link's architecture is a sophisticated blend of AI, blockchain technology, and traditional web services, designed to provide a seamless and intelligent interface for Star Atlas marketplace interactions.
 
 ### 2.1 Core Components
 
@@ -72,7 +72,7 @@ Star Link's architecture is a sophisticated blend of AI, blockchain technology, 
 
 ### 2.2 Data Flow
 
-1. User interacts with Star Link through ChatGPT interface
+1. User interacts with Atlas Link through ChatGPT interface
 2. AI model interprets queries and triggers appropriate API calls
 3. Flask backend processes requests, fetching data from various sources
 4. Node.js backend interacts with Solana blockchain when necessary
@@ -83,7 +83,7 @@ Star Link's architecture is a sophisticated blend of AI, blockchain technology, 
 
 ## 3. Integration with ChatGPT
 
-Star Link leverages the advanced natural language processing capabilities of ChatGPT to create an intuitive and powerful user interface for the Star Atlas marketplace.
+Atlas Link leverages the advanced natural language processing capabilities of ChatGPT to create an intuitive and powerful user interface for the Star Atlas marketplace.
 
 ### 3.1 Custom GPT Model
 
@@ -101,7 +101,7 @@ Star Link leverages the advanced natural language processing capabilities of Cha
 
 ## 4. Unique Capabilities
 
-Star Link offers several groundbreaking features that set it apart in the realm of AI-assisted DeFi platforms:
+Atlas Link offers several groundbreaking features that set it apart in the realm of AI-assisted DeFi platforms:
 
 ### 4.1 On-Chain Data Access
 
@@ -129,7 +129,7 @@ Star Link offers several groundbreaking features that set it apart in the realm 
 
 ## 5. API Documentation
 
-Star Link exposes several API endpoints to facilitate various operations. Here's a summary of the key endpoints:
+Atlas Link exposes several API endpoints to facilitate various operations. Here's a summary of the key endpoints:
 
 ### 5.1 Authentication
 - `GET /getlogin`: Initiates user authentication
@@ -156,7 +156,7 @@ For detailed information on request parameters, response formats, and example us
 
 ### 6.1 Authentication Flow
 
-Star Link uses a secure authentication flow to link users' Phantom wallets:
+Atlas Link uses a secure authentication flow to link users' Phantom wallets:
 
 1. User requests to authenticate
 2. System generates a unique login URL and pairing key
@@ -237,7 +237,7 @@ Star Link uses a secure authentication flow to link users' Phantom wallets:
 
 ## 9. Error Handling and System Reliability
 
-Star Link implements robust error handling to ensure a smooth user experience:
+Atlas Link implements robust error handling to ensure a smooth user experience:
 
 ### 9.1 API Errors
 - Proper status codes and error messages are returned
@@ -339,11 +339,11 @@ Would you like more details on any specific item in your inventory?
 
 ## 11. Implementation and Usage
 
-This section provides detailed information on how to set up, use, and understand the structure of the Star Link project.
+This section provides detailed information on how to set up, use, and understand the structure of the Atlas Link project.
 
 ### 11.1 Project Structure
 
-The Star Link project is organized into two main components: a Flask backend and a Node.js backend. Here's an overview of the project structure:
+The Atlas Link project is organized into two main components: a Flask backend and a Node.js backend. Here's an overview of the project structure:
 
 ```
 Star_Link/
@@ -390,7 +390,7 @@ Star_Link/
 
 ### 11.2 Setup and Installation
 
-To set up the Star Link project, follow these steps:
+To set up the Atlas Link project, follow these steps:
 
 1. Clone the repository:
    ```
@@ -430,15 +430,15 @@ To set up the Star Link project, follow these steps:
    node server.js
    ```
 
-3. The Star Link system is now running and ready to accept requests from the ChatGPT interface.
+3. The Atlas Link system is now running and ready to accept requests from the ChatGPT interface.
 
-### 11.4 Using Star Link
+### 11.4 Using Atlas Link
 
-To use Star Link:
+To use Atlas Link:
 
 1. Access the custom GPT through the ChatGPT interface (chat.openai.com).
 2. Start a conversation by asking about Star Atlas marketplace items, your inventory, or current market conditions.
-3. For actions requiring authentication, Star Link will guide you through the process of connecting your Phantom wallet.
+3. For actions requiring authentication, Atlas Link will guide you through the process of connecting your Phantom wallet.
 4. Follow the conversational prompts to navigate the marketplace, view order books, manage your profile, or initiate transactions.
 
 ### 11.5 Key Files and Their Purposes
@@ -452,7 +452,7 @@ To use Star Link:
 
 ### 11.6 Customization and Extension
 
-To extend Star Link's capabilities:
+To extend Atlas Link's capabilities:
 
 1. Add new API endpoints in `Flask_backend/app/routes.py`
 2. Implement new blockchain interactions in the Node.js backend files
@@ -506,11 +506,11 @@ Remember to update the `actions.yaml` file and this documentation when adding ne
 
 ### 13.1 Potential Enhancements
 
-1. Multi-chain Support: Extend Star Link to interact with multiple blockchain ecosystems beyond Solana.
+1. Multi-chain Support: Extend Atlas Link to interact with multiple blockchain ecosystems beyond Solana.
 2. Advanced AI Features: Implement more sophisticated market prediction algorithms and personalized investment strategies.
-3. Mobile Application: Develop a companion mobile app for on-the-go access to Star Link's features.
+3. Mobile Application: Develop a companion mobile app for on-the-go access to Atlas Link's features.
 4. Social Trading: Introduce features for users to share and follow trading strategies within the Star Atlas community.
-5. Integration with DeFi Protocols: Allow users to participate in yield farming, liquidity provision, and other DeFi activities directly through Star Link.
+5. Integration with DeFi Protocols: Allow users to participate in yield farming, liquidity provision, and other DeFi activities directly through Atlas Link.
 
 ### 13.2 Scalability Considerations
 
@@ -528,8 +528,8 @@ Remember to update the `actions.yaml` file and this documentation when adding ne
 
 ### 13.4 Conclusion
 
-Star Link represents a significant step forward in the integration of AI, DeFi, and blockchain gaming. By providing an intelligent, conversational interface to the complex world of the Star Atlas marketplace, it opens up new possibilities for user engagement, market analysis, and decentralized finance within gaming ecosystems.
+Atlas Link represents a significant step forward in the integration of AI, DeFi, and blockchain gaming. By providing an intelligent, conversational interface to the complex world of the Star Atlas marketplace, it opens up new possibilities for user engagement, market analysis, and decentralized finance within gaming ecosystems.
 
-As the project evolves, it has the potential to reshape how users interact with digital asset markets, making complex DeFi operations more accessible to a broader audience. The success of Star Link could pave the way for similar AI-driven assistants across various blockchain and gaming platforms, ultimately contributing to the mainstream adoption of decentralized technologies.
+As the project evolves, it has the potential to reshape how users interact with digital asset markets, making complex DeFi operations more accessible to a broader audience. The success of Atlas Link could pave the way for similar AI-driven assistants across various blockchain and gaming platforms, ultimately contributing to the mainstream adoption of decentralized technologies.
 
-The combination of natural language processing, real-time blockchain data analysis, and user-friendly interfaces positions Star Link at the forefront of the next generation of DeFi tools. As we continue to develop and refine this system, we invite the community to contribute, explore, and help shape the future of AI-assisted decentralized finance in the gaming world.
+The combination of natural language processing, real-time blockchain data analysis, and user-friendly interfaces positions Atlas Link at the forefront of the next generation of DeFi tools. As we continue to develop and refine this system, we invite the community to contribute, explore, and help shape the future of AI-assisted decentralized finance in the gaming world.
